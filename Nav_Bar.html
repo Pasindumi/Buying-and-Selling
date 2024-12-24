@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Double-Column Navigation Bar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+   
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background: linear-gradient(45deg, #ffd25f, #ff8e8e);
+      color: white;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .navbar-top .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .navbar-top .search-bar {
+      display: flex;
+      align-items: center;
+      width: 40%;
+      position: relative;
+      left: -100px;
+    }
+
+    .navbar-top .search-bar input {
+      width: 90%;
+      padding: 8px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+
+    .navbar-top .search-bar button {
+      padding: 8px 15px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+
+   
+    .navbar-top .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .navbar-top .auth-buttons button {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #ff7e5f;
+      background: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-top .auth-buttons button:hover {
+      background: #ffd700;
+      color: #333;
+    }
+
+   
+    .navbar-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .navbar-bottom .nav-links {
+      display: flex; 
+      justify-content: center; 
+      gap: 105px; 
+      width: 100%; 
+      text-align: center; 
+    }
+
+    .navbar-bottom .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      transition: color 0.3s;
+      text-align: center;
+    }
+
+    .navbar-bottom .nav-links a:hover {
+      color: #00fff7;
+    }
+
+    .navbar-bottom .icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar-bottom .icons i {
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .navbar-bottom .icons i:hover {
+      color: #ffd700;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .navbar-top .search-bar {
+        width: 80%;
+      }
+
+      .navbar-bottom {
+        flex-wrap: wrap;
+        text-align: center;
+      }
+
+      .navbar-bottom .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .navbar-bottom .icons {
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .navbar-top .auth-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="navbar">
+
+    <div class="navbar-top">
+      <div class="logo">Buy&Sell</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products...">
+        <button>Search</button>
+      </div>
+      <div class="auth-buttons">
+        <button>Login</button>
+        <button>Signup</button>
+      </div>
+    </div>
+
+   
+    <div class="navbar-bottom">
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#sell">Sell</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="icons">
+        <i class="fa fa-shopping-cart"></i>
+        <i class="fa fa-user-circle"></i>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
