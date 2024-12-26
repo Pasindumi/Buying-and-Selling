@@ -1,0 +1,91 @@
+body {
+         font-family: Arial, sans-serif;
+         line-height: 1.6;
+         margin: 0;
+         padding: 0;
+         color: #333;
+         background: linear-gradient(45deg, #ffd25f, #ff8e8e);
+       }
+       
+       .header {
+         text-align: center;
+         background: linear-gradient(45deg, #ffd25f, #fca6a6);
+         padding: 30px 20px;
+       }
+       
+       header h1 {
+         font-size: 2.5rem;
+         color: #0073e6;
+       }
+       
+       .about-content {
+         max-width: 1200px;
+         margin: 20px auto;
+         padding: 20px;
+       }
+       
+       .row {
+         display: flex;
+         flex-wrap: wrap;
+         margin-bottom: 20px;
+       }
+       
+       .left-column, .right-column {
+         flex: 1;
+         padding: 10px;
+       }
+       
+       .left-column img, .right-column img {
+         width: 100%;
+         border-radius: 8px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+       }
+       
+       .numbers {
+         text-align: center;
+         background-color: #fff;
+         padding: 30px 20px;
+         margin: 20px auto;
+         border-radius: 8px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         max-width: 900px;
+       }
+       
+       .numbers h2 {
+         color: #0073e6;
+         margin-bottom: 20px;
+       }
+       
+       .stats {
+         display: flex;
+         justify-content: center;
+         gap: 20px;
+       }
+       
+       .stat {
+         text-align: center;
+         background: #f0f0f0;
+         padding: 20px;
+         border-radius: 8px;
+         width: 30%;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+       }
+       
+       .stat h3 {
+         font-size: 2rem;
+         color: #0073e6;
+       }
+       
+       .footer {
+         text-align: center;
+         padding: 15px;
+         background: #0073e6;
+         color: #fff;
+         margin-top: 20px;
+       }
+       
+       .footer a {
+         color: #fff;
+         text-decoration: underline;
+       }
+       
