@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #ffd25f, #ff8e8e);
+      color: #fff;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 50px;
+    }
+
+    /* Left side: Contact details */
+    .contact-details {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      animation: slideIn 1s ease-out;
+    }
+
+    .contact-details h2 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+
+    .contact-details p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .contact-details .email, .contact-details .phone {
+      font-weight: bold;
+      color: #ff7e5f;
+    }
+
+    /* Right side: Message Form */
+    .contact-form {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      animation: slideIn 1s ease-out;
+    }
+
+    .contact-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 2px solid #ff7e5f;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: #f9f9f9;
+      transition: all 0.3s;
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: #feb47b;
+      background-color: #fff;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 18px;
+      background-color: #ff7e5f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 20px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #feb47b;
+      transform: scale(1.05);
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* Beautiful scrollable images section */
+    .scrollable-images {
+      position: relative;
+      width: 90%;
+      height:250px;
+      overflow: hidden;
+      margin-top: 40px;
+      left: 20px;
+    }
+
+    .scrollable-images img {
+      position: absolute;
+      width: 350px;
+      height: 250px;
+      border-radius: 12px;
+      transition: opacity 1s ease-in-out;
+      opacity: 0;
+    }
+
+    .scrollable-images img.active {
+      opacity: 1;
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive design for mobile and smaller screens */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-details, .contact-form {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .scrollable-images img {
+        width: 160px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <object type="text/html" data="Nav_Bar.html" style="width:100%; height:100px;"></object>
+
+  <h1 style="text-align: center; font-size: 40px; margin-top: 30px; color: white;">Contact Us</h1>
+
+  <div class="container">
+    <!-- Left side: Contact Details -->
+    <div class="contact-details">
+      <h2> Contact Information</h2>
+      <p>If you have any questions or inquiries, feel free to reach out to us through the following:</p>
+      <p><span class="email">Email:</span> <a href="mailto:contact@yourdomain.com" style="color: #ff7e5f;">contact@buy&selladmin.com</a></p>
+      <p><span class="phone">Phone:</span> +94 778602219</p>
+      <p><span class="address">Address:</span> No 212/1,  Sudarshana Mawatha, Malabe, Sri Lanka</p>
+
+      <div class="scrollable-images">
+        <img src="Images/img01.jpg" alt="Image 1" class="active">
+        <img src="Images/img02.jpg" alt="Image 2">
+        <img src="Images/img03.jpg" alt="Image 3">
+        <img src="Images/img04.avif" alt="Image 4">
+      </div>
+    </div>
+
+    <!-- Right side: Message Form -->
+    <div class="contact-form">
+      <h2>Send Us a Message</h2>
+      <form id="contact-form" action="submit_form.php" method="POST">
+        <label for="name" style="color: #333;">Name:</label>
+        <input type="text" id="name" name="name" class="input-field" required>
+
+        <label for="email"style="color: #333;" >Email:</label>
+        <input type="email" id="email" name="email" class="input-field" required>
+
+        <label for="message"style="color: #333;" >Message:</label>
+        <textarea id="message" name="message" class="input-field" rows="5" required></textarea>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+
+      <div id="error-message" class="error-message"></div>
+    </div>
+  </div>
+
+  <script>
+    // Function to automatically change the images every 2 seconds with fade effect
+    let images = document.querySelectorAll('.scrollable-images img');
+    let currentIndex = 0;
+
+    function changeImage() {
+      images[currentIndex].classList.remove('active'); // Remove the active class from current image
+      currentIndex = (currentIndex + 1) % images.length; // Move to the next image
+      images[currentIndex].classList.add('active'); // Add the active class to the next image
+    }
+
+    // Set interval to change image every 2 seconds
+    setInterval(changeImage, 2000);
+  </script>
+
+</body>
+</html>
