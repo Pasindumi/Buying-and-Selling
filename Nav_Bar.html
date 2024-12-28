@@ -114,6 +114,40 @@
       color: #00fff7;
     }
 
+       /* Dropdown Menu */
+       .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background:linear-gradient(45deg, #ffd25f, #ff8e8e);
+      color: black;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      text-decoration: none;
+      color: black;
+      padding: 10px 20px;
+      display: block;
+      transition: background 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #db855c;
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
     .navbar-bottom .icons {
       display: flex;
       gap: 15px;
@@ -180,7 +214,15 @@
     <div class="navbar-bottom">
       <div class="nav-links">
         <a href="#home">Home</a>
-        <a href="#categories">Categories</a>
+        <div class="dropdown">
+          <a href="#categories">Categories</a>
+          <div class="dropdown-content">
+            <a href="electronics.html">Electronics</a>
+            <a href="#fashion">Fashion</a>
+            <a href="#home-garden">Home & Garden</a>
+            <a href="#sports">Sports</a>
+          </div>
+          </div>
         <a href="#sell">Sell</a>
         <a href="#about">About Us</a>
         <a href="#contact">Contact</a>
