@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Double-Column Navigation Bar</title>
+
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
   <style>
     * {
       margin: 0;
@@ -191,6 +195,63 @@
         justify-content: center;
       }
     }
+
+  .electronics-container{
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+       gap: 1rem;
+       margin-top: 2rem;
+  }
+
+  .electronics-container .box{
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 20px;
+     border-radius: 0.5rem;
+  }
+
+  .electronics-container .box img{
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .electronics-container .box h2 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .electronics-container .box span{
+    font-size: 1.2rem;
+    font-weight:400 ;
+    margin-bottom: 1rem;
+  }
+
+  .electronics-container .box .bx{
+    padding: 10px;
+    background: rgb(252, 137, 84);
+    color: white;
+    border-radius: 5rem;
+    margin-top: 2rem;
+    position: absolute;
+    bottom: -8%;
+    display: none;
+  }
+
+  .electronics-container .box .bx:hover{
+    background: #ffd700;
+    transition: 0.2s all linear;
+  }
+
+  .electronics-container .box:hover .bx {
+    display: block;
+    transition: 0.2s all linear;
+  }
+
+   
   </style>
 </head>
 <body>
@@ -217,7 +278,7 @@
         <div class="dropdown">
           <a href="#categories">Categories</a>
           <div class="dropdown-content">
-            <a href="products/electronics.html">Electronics</a>
+            <a href="electronics.html">Electronics</a>
             <a href="#fashion">Fashion</a>
             <a href="#home-garden">Home & Garden</a>
             <a href="#sports">Sports</a>
@@ -233,6 +294,41 @@
       </div>
     </div>
   </div>
+
+  <h1 style="text-align: center; margin: 20px 0; color: #333; font-size: 2.5rem;">Electronics</h1>
+
+  <section class="electronics" id="electronics">
+    <div class="electronics-container">
+      <div class="box">
+        <img src="img/mobilephone.png">
+        <h2>Mobile phones</h2>
+        <span>1 item</span>
+        <i class='bx bx-right-arrow-alt'></i>
+      </div>
+
+      <div class="box">
+        <img src="img/laptop.png">
+        <h2>Laptops</h2>
+        <span>1 item</span>
+        <i class='bx bx-right-arrow-alt'></i>
+      </div>
+
+      <div class="box">
+        <img src="img/camera.png">
+        <h2>Cameras</h2>
+        <span>1 item</span>
+        <i class='bx bx-right-arrow-alt'></i>
+      </div>
+
+      <div class="box">
+        <img src="img/accessories.png">
+        <h2>accessories</h2>
+        <span>1 item</span>
+        <i class='bx bx-right-arrow-alt'></i>
+      </div>
+
+    </div>
+  </section>
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
