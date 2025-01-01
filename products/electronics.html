@@ -199,7 +199,7 @@
   .electronics-container{
        display: grid;
        grid-template-columns: repeat(auto-fit, minmax(180px, auto));
-       gap: 1rem;
+       gap: 2rem;
        margin-top: 2rem;
   }
 
@@ -267,7 +267,115 @@
     background: #f7f6d7;
   }
 
-   
+  .product-slider .wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);;
+  gap: 25px;
+  justify-items: center;
+  max-width: 1200px; 
+  margin: 0 auto;
+}
+
+.product-slider .box {
+  width: 250px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  padding: 20px;
+  
+}
+
+.product-slider .box:hover {
+  transform: scale(1.05);
+}
+
+.product-slider .box img {
+  width: 120%;
+  height: auto;
+  max-width: 250px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product-slider .box h3 {
+  font-size: 1.8rem;
+  color: #ff7e5f;
+  margin-bottom: 10px;
+}
+
+.product-slider .box .price {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-slider .box .stars i {
+  color: #ffd700;
+  margin-right: 5px;
+}
+
+.product-slider .box .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff7e5f;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.product-slider .box .btn:hover {
+  background-color: #ffd700;
+}
+
+.box .description {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 10px 0;
+  line-height: 1.4;
+}
+
+  .heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222223;
+  margin: 40px 0 40px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.heading::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 5px;
+  background: #ffd700;
+  margin: 10px auto 0;
+  border-radius: 5px;
+}
+
+ul {
+      list-style-type: none; /* Remove default bullets */
+      padding-left: 0; /* Remove default list padding */
+    }
+
+    li {
+      margin-bottom: 5px; /* Add spacing between list items */
+    }
+
+    li::before {
+      content: "\2022"; /* Unicode for bullet point */
+      margin-right: 5px; /* Add spacing between bullet and text */
+    }
+
+
   </style>
 </head>
 <body>
@@ -346,7 +454,484 @@
     </div>
   </section>
 
+  <!-- Product section starts -->
+
+  <section class="products" id="products">
+
+     <!-- mobile phones section starts -->
+    <h1 class="heading"> Mobile <span> Phones </span> </h1>
+
+    <div class="product-slider">
+
+      <div class="wrapper">
+
+        <div class="box">
+          <img src="img/iphone 15 pro max.png" alt="">
+          <h3>iPhone 15 Pro max</h3>
+          <div class="price"> LKR 312 900.00 -LKR 351 900.00</div>
+          <p class="description">iPhone 15 Pro Max is the first iPhone to feature an aerospace‑grade titanium design, using the same alloy that spacecraft use for missions to Mars.</p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/iphone 16.png" alt="">
+          <h3>iPhone 16</h3>
+          <div class="price"> LKR 254 900.00 - LKR 289 900.00</div>
+          <p class="description">With a larger battery and the power-efficient A18 chip, you can enjoy longer usage times without needing to recharge. </p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/iPhone 14.png" alt="">
+          <h3>Apple iPhone 14 128GB</h3>
+          <div class="price"> LKR 179 900.00</div>
+          <p class="description">Dynamic Island notch redesign and always-on display, but the entry-level iPhone 14 and 14 Plus also come with larger screen options, updated camera quality</p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/s24.png" alt="">
+          <h3>Samsung Galaxy S24 128GB</h3>
+          <div class="price"> LKR 114,900.00</div>
+          <p class="description">Capture detailed images from afar with Optical Quality Zoom. Supported by advanced neural processing and graphical capabilities, this feature brings distant subjects into sharp focus without sacrificing image quality.</p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/pixel.png" alt="">
+          <h3>Google Pixel 7 Pro 5G 12GB</h3>
+          <div class="price"> LKR 209,900.00</div>
+          <p class="description">Google Pixel 7 Pro 5G 6.7 inches AMOLED front screen promises alluring visuals, having a resolution of 1440 x 3120 pixels. </p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/Honour.png" alt="">
+          <h3>Honor X5B (4GB / 64GB) (Midnight Black)</h3>
+          <div class="price"> LKR 29 999.00</div>
+          <p class="description">64GB, 4GB RAM
+            720 x 1612 pixels, 6.56 inches
+            Android 14/Magic OS 8
+            13 MP + 5MP Selfie</p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/samsung.png" alt="">
+          <h3>Samsung Galaxy Z Flip 6</h3>
+          <div class="price"> LKR 314,900.00</div>
+          <p class="description">12 GB RAM | 256 GB ROM
+            17.02 cm (6.7 inch) Full HD+ Display
+            50MP + 12MP | 10MP Front Camera
+            Snapdragon 8 Gen 3 Processor</p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/s24 nultra.png" alt="">
+          <h3>Samsung Galaxy S24 Ultra</h3>
+          <div class="price"> LKR 499,900.00</div>
+          <p class="description">From satisfying your curiosity on the spot with Circle to Search with Google, to zooming in to capture stunning low light photos, unleash new ways to create, connect</p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/Mi.png" alt="">
+          <h3>OnePlus Nord CE 3 Lite 5G</h3>
+          <div class="price"> LKR 94,900.00</div>
+          <p class="description">67W SUPERVOOC Endurance Edition + 5,000 mAh Battery
+            108 MP Camera System
+            Qualcomm® Snapdragon™ 695 Chipset
+            8GB Virtual RAM Expansion</p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/redmi.png" alt="">
+          <h3>Xiaomi Redmi 14C</h3>
+          <div class="price"> LKR 41,999.00</div>
+          <p class="description"> The carefully crafted curves are not only visually stunning but also make the device comfortable to hold. This design embodies a minimalist aesthetic, enhancing the device’s overall visual appeal</p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+
+      </div>
+
+    </div>
+
+     <!-- Laptop section starts -->
+
+    <h1 class="heading"> Laptops </h1>
+
+    <div class="product-slider">
+
+      <div class="wrapper">
+
+        <div class="box">
+          <img src="img/Asus.png" alt="">
+          <h3>Asus Vivobook 15 X1504VAP – Core 5</h3>
+          <div class="price"> LKR 229,000.00</div>
+          <ul>
+            <li>Intel Core 5 Processor</li>
+            <li>512GB NVME M.2 SSD</li>
+            <li>8GB DDR4 RAM</li>
+            <li>Intel UHD Graphics</li>
+          </ul>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/ryzen.png" alt="">
+          <h3>Asus TUF Gamin – Ryzen 7</h3>
+          <div class="price"> LKR 229,000.00</div>
+          <ul>
+            <li>AMD Ryzen 7 7435HS Processor</li>
+            <li>512GB NVME M.2 SSD</li>
+            <li>16GB (8GB + 8GB) DDR5-4800 RAM</li>
+            <li>15.6, FHD (1920 x 1080), 144Hz Display</li>
+          </ul>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/core.png" alt="">
+          <h3>HP 15 fd0181TU – i7</h3>
+          <div class="price"> LKR 285,000.00</div>
+          <ul>
+            <li>Intel Core i7-1355U Processor</li>
+            <li>512GB NVME M.2 SSD</li>
+            <li>16GB DDR4-3200 MHz RAM</li>
+            <li>Intel Iris Xe Graphics</li>
+          </ul>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/ryzemn5.png" alt="">
+          <h3>Hp Victus 15 Gaming – Ryzen 5</h3>
+          <div class="price"> LKR 260,500.00</div>
+          <ul>
+            <li>AMD Ryzen 5-7535HS Processor</li>
+            <li>512GB NVME M.2 SSD</li>
+            <li>16GB DDR5 RAM</li>
+            <li>Backlit, mica silver keyboard</li>
+          </ul>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/lenovo 7.png" alt="">
+          <h3>Lenovo IdeaPad Slim 3 15IRH8 – i7</h3>
+          <div class="price"> LKR 229,000.00</div>
+          <ul>
+            <li> Intel Core i7-13620H Processor</li>
+            <li>512GB SSD M.2 PCIe NVMe</li>
+            <li>15.6″ FHD (1920×1080) Display</li>
+          </ul>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+      </div>
+
+    </div>
+
+     <!-- Camera section starts -->
+
+    <h1 class="heading"> Camera </h1>
+
+    <div class="product-slider">
+
+      <div class="wrapper">
+
+        <div class="box">
+          <img src="img/c1.png" alt="">
+          <h3>Sony Alpha a7 III Mirrorless Digital Camera</h3>
+          <div class="price"> LKR 399 500.00</div>
+          <ul>
+            <li>24MP Full-Frame Exmor R BSI CMOS Sensor</li>
+            <li>BIONZ X Image Processor & Front-End LSI</li>
+            <li>693-Point Hybrid AF System</li>
+          </ul>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/c3.png" alt="">
+          <h3>Canon EOS 2000D DSLR Camera </h3>
+          <div class="price"> LKR 124 900.00 - LKR 289 900.00</div>
+          <ul>
+            <li>24.1MP APS-C CMOS Sensor</li>
+            <li>DIGIC 4+ Image Processor</li>
+            <li>3.0" 920k-Dot LCD Monito</li>
+          </ul>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/c2.png" alt="">
+          <h3>GoPro HERO13 Black Action Camera</h3>
+          <div class="price"> LKR 115 9990.00</div>
+          <ul>
+            <li>More power options</li>
+            <li>More mounting flexibility</li>
+            <li>Built-in 360° Horizon Lock</li>
+          </ul>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/c4.png" alt="">
+          <h3>SJCAM SJ4000 Dual-Screen Action Camera</h3>
+          <div class="price"> LKR 34 500.00</div>
+          <ul>
+            <li>Capture 16MP Still Photos</li>
+            <li>Ultra-Wide 170° Lens, Wi-Fi Control</li>
+            <li>2" LCD Back Display, 1.3" Front Display</li>
+          </ul>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+        
+
+      </div>
+
+    </div>
+
+     <!-- Accessories section starts -->
+    <h1 class="heading"> Accessories </h1>
+
+    <div class="product-slider">
+
+      <div class="wrapper">
+
+        <div class="box">
+          <img src="img/jbl.png" alt="">
+          <h3>JBL JR 310BT Kids Wireless Headphones</h3>
+          <div class="price"> LKR 19 900.00 -LKR 351 900.00</div>
+          <p class="description">A wireless connection up to 15 meters away means no wires to worry about.
+
+            Help your kids stay connected to the world with the built-in mic. </p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/desk.png" alt="">
+          <h3>Wireless Charging Desk Lamp Speaker </h3>
+          <div class="price"> LKR 11 400.00 -LKR 351 900.00</div>
+          <p class="description">Unbelieveable Super Bass Sound
+            Portable Bluetooth speaker with wireless charging</p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/watch.png" alt="">
+          <h3>Samsung Galaxy Watch FE</h3>
+          <div class="price"> LKR 59 900.00</div>
+          <p class="description">Crafted with Sapphire Crystal glass and boasting an impressive IP68 rating, Galaxy Watch FE is water and dust resistant so you can focus on your daily activities confidently.</p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/chip.png" alt="">
+          <h3>Kingston Micro SD 32GB</h3>
+          <div class="price"> LKR 2900.00</div>
+          <p class="description">Multiple capacities – Up to 512GB to store all your memorable photos and videos.</p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+        <div class="box">
+          <img src="img/cable.png" alt="">
+          <h3>Anker 735 Charger</h3>
+          <div class="price"> LKR 26 900.00</div>
+          <p class="description">With 2 USB-C ports and one USB-A port, you can charge your phone, notebook, and earbuds all at once from a single charger. Connect a single device to charge at up to 65W.</p>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas da-star-half-alt"></i>
+          </div>
+          <a href="#" class="btn">add to cart</a>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
+
