@@ -427,28 +427,28 @@ ul {
         <img src="img/mobilephone.png">
         <h2>Mobile phones</h2>
         <span>1 item</span>
-        <i class='bx bx-right-arrow-alt'></i>
+        <i class='bx bx-right-arrow-alt' data-target="mobile-phones"></i>
       </div>
 
       <div class="box box2">
         <img src="img/laptop.png">
         <h2>Laptops</h2>
         <span>1 item</span>
-        <i class='bx bx-right-arrow-alt'></i>
+        <i class='bx bx-right-arrow-alt' data-target="laptops"></i>
       </div>
 
       <div class="box box3">
         <img src="img/camera.png">
         <h2>Cameras</h2>
         <span>1 item</span>
-        <i class='bx bx-right-arrow-alt'></i>
+        <i class='bx bx-right-arrow-alt' data-target="cameras"></i>
       </div>
 
       <div class="box box4">
         <img src="img/accessories.png">
         <h2>accessories</h2>
         <span>1 item</span>
-        <i class='bx bx-right-arrow-alt'></i>
+        <i class='bx bx-right-arrow-alt' data-target="accessories"></i>
       </div>
 
     </div>
@@ -456,9 +456,8 @@ ul {
 
   <!-- Product section starts -->
 
-  <section class="products" id="products">
-
      <!-- mobile phones section starts -->
+    <section id="mobile-phones">
     <h1 class="heading"> Mobile <span> Phones </span> </h1>
 
     <div class="product-slider">
@@ -628,9 +627,10 @@ ul {
       </div>
 
     </div>
+  </section>
 
      <!-- Laptop section starts -->
-
+    <section id="laptops">
     <h1 class="heading"> Laptops </h1>
 
     <div class="product-slider">
@@ -739,9 +739,10 @@ ul {
       </div>
 
     </div>
+  </section>
 
      <!-- Camera section starts -->
-
+<srction id="cameras">
     <h1 class="heading"> Camera </h1>
 
     <div class="product-slider">
@@ -828,8 +829,10 @@ ul {
       </div>
 
     </div>
+  </srction>
 
      <!-- Accessories section starts -->
+      <section id="accessories">
     <h1 class="heading"> Accessories </h1>
 
     <div class="product-slider">
@@ -918,19 +921,30 @@ ul {
 
     </div>
 
-
-  </section>
-
+</section>
 
 
+<script > document.addEventListener("DOMContentLoaded", function () {
+    
+    const arrows = document.querySelectorAll(".bx-right-arrow-alt[data-target]");
 
+    
+    arrows.forEach((arrow) => {
+      arrow.addEventListener("click", function () {
+        
+        const targetId = arrow.getAttribute("data-target");
+        const targetSection = document.getElementById(targetId);
 
-
-
-
-
-
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: "smooth", 
+            block: "start", 
+          });
+        }
+      });
+    });
+  });</script>
 
 </body>
 </html>
