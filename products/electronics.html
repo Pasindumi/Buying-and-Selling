@@ -332,10 +332,18 @@
   border-radius: 5px;
   margin-top: 10px;
   transition: background-color 0.3s ease;
+  display:none;
+  
 }
 
 .product-slider .box .btn:hover {
   background-color: #ffd700;
+  transition: 0.2s all linear;
+}
+
+.product-slider .box:hover .btn {
+  display: block;
+  transition: 0.2s all linear;
 }
 
 .box .description {
