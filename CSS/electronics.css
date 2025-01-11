@@ -150,21 +150,21 @@ transform: scale(1.05);
 }
 
 .product-slider .box img {
-width: 120%;
-height: auto;
-max-width: 250px;
+width: 100%;
+height: 180px;
+max-width: 180px;
 border-radius: 8px;
 margin-bottom: 15px;
 }
 
 .product-slider .box h3 {
-font-size: 1.8rem;
+font-size: 1.5rem;
 color: #ff7e5f;
 margin-bottom: 10px;
 }
 
 .product-slider .box .price {
-font-size: 1.5rem;
+font-size: 1.2rem;
 color: #333;
 margin-bottom: 10px;
 }
