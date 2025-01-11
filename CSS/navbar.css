@@ -110,6 +110,7 @@
      /* Dropdown Menu */
      .dropdown {
     position: relative;
+    z-index: 9999;
   }
 
   .dropdown-content {
@@ -121,7 +122,7 @@
     color: black;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    z-index: 1;
+    z-index: 9999;
   }
 
   .dropdown-content a {
@@ -139,6 +140,7 @@
 
   .dropdown:hover .dropdown-content {
     display: block;
+    
   }
 
   .navbar-bottom .icons {
@@ -183,4 +185,5 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+    
   }

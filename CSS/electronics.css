@@ -8,6 +8,9 @@
 
   body {
     font-family: Arial, sans-serif;
+    overflow: visible;
+    
+    
   }
 
 
@@ -39,12 +42,21 @@
       justify-content: center;
     }
   }
+.electronics{
+    position: relative;
+    z-index: 1; 
+}
+
 
 .electronics-container{
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(180px, auto));
      gap: 2rem;
      margin-top: 2rem;
+     overflow: visible;
+     position: relative;
+     z-index: 1;
+     
 }
 
 .electronics-container .box{
@@ -54,6 +66,7 @@
    align-items: center;
    padding: 20px;
    border-radius: 0.5rem;
+   z-index: 1;
 }
 
 .electronics-container .box img{
