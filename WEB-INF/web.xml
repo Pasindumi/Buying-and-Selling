@@ -5,14 +5,14 @@
          version="3.0">
   
     <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>RegisterServlet</servlet-class>
+        <servlet-name>registerservlets</servlet-name>
+        <servlet-class>registerservlets</servlet-class>
     </servlet>
     
 
     <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/RegisterServlet</url-pattern>
+        <servlet-name>registerservlets</servlet-name>
+        <url-pattern>/registerservlets</url-pattern>
     </servlet-mapping>
     
    
