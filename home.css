@@ -1,0 +1,213 @@
+:root {
+    --font-small: 14px;
+    --fw3: 300;
+    --fw7: 700;
+    --dark-color: #333;
+    --white-color: #fff;
+    --light-text-color: #777;
+    --secondary-dark-color: #ff6347;
+    --precent100: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+main {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Ensure content fits within the viewport */
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.myslider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.slider .item::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 600px;
+    height: 450px;
+    background-color: var(--white-color);
+    z-index: 1;
+    filter: blur(90px);
+    opacity: .8;
+}
+
+.slide {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; 
+    padding: 0;
+}
+
+.item {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Makes the slider height responsive */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.item .image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.item .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    display: block; /* Removes any inline spacing issues */
+}
+
+.text-content {
+    position: absolute;
+    bottom: 10%; /* Ensures text stays at the bottom */
+    left: 10%;
+    z-index: 2; /* Ensures text appears above the image */
+    color: var(--white-color);
+    text-align: left;
+}
+
+.text-content h4 {
+    font-size: var(--font-small);
+    font-weight: var(--fw7);
+    background-color: var(--dark-color);
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.text-content h2 {
+    font-size: 2rem;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.text-content h2 span:first-child {
+    font-weight: var(--fw3);
+    color: var(--dark-color); /* Darker color for "Come and Get it!" */
+}
+
+.text-content h2 span:last-child {
+    color: var(--secondary-dark-color); /* Bright color for "Brand New Shoes" */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.primary-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--secondary-dark-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+    background-color: #e5533d;
+}
+
+.swiper-pagination .swiper-pagination-bullet-actice {
+    background-color: var(--secondary-dark-color);
+}
+
+
+/* Style for the container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    margin: 20px;
+  }
+  
+  /* Style for each logo image */
+  .logo {
+    max-width: 200px;
+    max-height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Optional: Hover effect for logos */
+  .logo:hover {
+    transform: scale(3.8);
+  }
+  
+   /* Offers Section */
+
+   h2 {
+    text-align: center;
+    margin: 20px 0;
+  }
+   .offers .offer-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+
+  .offer-card h3 {
+    font-size: 20px;
+    color: #e74c3c;
+  }
+  
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+  }
+  
