@@ -20,7 +20,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 60px); /* Ensure content fits within the viewport */
+    height: calc(100vh - 60px); 
 }
 
 .slider {
@@ -78,7 +78,7 @@ main {
 .item {
     position: relative;
     width: 100%;
-    height: 60vh; /* Makes the slider height responsive */
+    height: 60vh; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,15 +96,15 @@ main {
 .item .image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the container */
-    display: block; /* Removes any inline spacing issues */
+    object-fit: cover; 
+    display: block; 
 }
 
 .text-content {
     position: absolute;
-    bottom: 10%; /* Ensures text stays at the bottom */
+    bottom: 10%; 
     left: 10%;
-    z-index: 2; /* Ensures text appears above the image */
+    z-index: 2; 
     color: var(--white-color);
     text-align: left;
 }
@@ -127,11 +127,11 @@ main {
 
 .text-content h2 span:first-child {
     font-weight: var(--fw3);
-    color: var(--dark-color); /* Darker color for "Come and Get it!" */
+    color: var(--dark-color); 
 }
 
 .text-content h2 span:last-child {
-    color: var(--secondary-dark-color); /* Bright color for "Brand New Shoes" */
+    color: var(--secondary-dark-color); 
     text-transform: uppercase;
     letter-spacing: 1px;
 }
