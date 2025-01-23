@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="CSS/checkout.css">
+</head>
+<body>
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+        <!-- Product Summary -->
+        <div class="product-summary">
+            <h2>Order Summary</h2>
+            <div id="product-list">
+                <div class="product-item">
+                    <img src="laptop.jpg" alt="Laptop">
+                    <p>Laptop</p>
+                    <p>Price: $1000</p>
+                    <p>Quantity: 1</p>
+                </div>
+                <div class="total">
+                    <p>Total: $1000</p>
+                </div>
+            </div>
+        </div>
+        <!-- Shipping Information -->
+        <form id="checkout-form">
+            <h2>Shipping Information</h2>
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="text" id="address" placeholder="Address" required>
+            <input type="text" id="phone" placeholder="Phone Number" required>
+            <!-- Payment Options -->
+            <h2>Payment Method</h2>
+            <label>
+                <input type="radio" name="payment" value="card" required>
+                Credit/Debit Card
+            </label>
+            <label>
+                <input type="radio" name="payment" value="paypal">
+                PayPal
+            </label>
+            <label>
+                <input type="radio" name="payment" value="cod">
+                Cash on Delivery
+            </label>
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+    <script src="JS/checkout.js"></script>
+</body>
+</html>

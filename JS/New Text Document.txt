@@ -1,0 +1,470 @@
+import React from "react";
+import AddLecturer from "./components/AddLecturer";
+import LoginSignup from "./components/LoginSignup";
+
+function App() {
+  return (
+    <div>
+      <AddLecturer />
+      <LoginSignup/>
+    </div>
+  );
+}
+
+export default App;
+
+
+
+--------navbar css-------
+
+body, ul, li, a {
+         margin: 0;
+         padding: 0;
+         text-decoration: none;
+         list-style: none;
+       }
+       
+      
+       .navbar {
+         width: 100%;
+         font-family: 'Arial', sans-serif;
+         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+       }
+       
+     
+       .navbar-top {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 5px 20px;
+         background-color: #012b55;
+         color: #fff;
+       }
+       
+       .navbar-top .brand {
+         font-size: 1.5rem;
+         font-weight: bold;
+       }
+       
+       .navbar-top .top-links a {
+         color: #fff;
+         margin-left: 15px;
+         font-size: 0.9rem;
+         transition: color 0.3s;
+       }
+       
+       .navbar-top .top-links a:hover {
+         color: #ffcc00;
+       }
+       
+       
+       .navbar-bottom {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         
+         padding: 5px 20px;
+         background-color: #023b74;
+         color: #fff;
+       }
+       
+       
+       .navbar-bottom .nav-links {
+         display: flex;
+       }
+       
+       .navbar-bottom .nav-links li {
+         margin: 0 15px;
+       }
+       
+       .navbar-bottom .nav-links a {
+         color: #fff;
+         font-size: 1rem;
+         font-weight: 500;
+         transition: color 0.3s;
+       }
+       
+       .navbar-bottom .nav-links a:hover {
+         color: #ffcc00;
+       }
+       
+    
+       .search-bar {
+         display: flex;
+         align-items: center;
+       }
+       
+       .search-bar input {
+         padding: 5px;
+         font-size: 0.9rem;
+         border: 1px solid #fff;
+         border-radius: 3px;
+         outline: none;
+       }
+       
+       .search-bar input::placeholder {
+         color: #bbb;
+       }
+       
+       .search-bar button {
+         padding: 5px 10px;
+         margin-left: 5px;
+         background-color: #ffcc00;
+         border: none;
+         border-radius: 3px;
+         font-size: 0.9rem;
+         color: #004080;
+         cursor: pointer;
+         transition: background-color 0.3s;
+       }
+       
+       .search-bar button:hover {
+         background-color: #ffa500;
+       }
+
+
+
+
+
+
+
+navbar jsx-----------------------
+
+
+import React from 'react';
+import '../styles/navbar.css';
+
+
+const Navbar = () => {
+  return (
+    <div className="navbar">
+      
+      <div className="navbar-top">
+        <div className="brand">BrandLogo</div>
+        <div className="top-links">
+          <a href="#help">Help</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+     
+      <div className="navbar-bottom">
+        <ul className="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+        <div className="search-bar">
+          <input type="text" placeholder="Search..." />
+          <button>Go</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
+
+
+
+
+
+
+-----------LoginSignup.jsx----------------
+
+
+import React, { useState } from 'react';
+import axios from 'axios';
+import '../styles/LoginSignup.css';
+
+import user_icon from '../components/assets/name.png';
+import email_icon from '../components/assets/email.png';
+import password_icon from '../components/assets/password.png';
+
+const LoginSignup = () => {
+  const [formData, setFormData] = useState({ user: '', email: '', password: '' });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSignup = async () => {
+    try {
+      const response = await axios.post('http://localhost:5000/signup', formData);
+      alert(response.data); // Display success message
+    } catch (error) {
+      console.error("Error during signup:", error);
+      alert("Error signing up. Please try again.");
+    }
+  };
+
+  return (
+    <div className='container'>
+      <div className='header'>
+        <div className="text">SignUp</div>
+        <div className="underline"></div>
+      </div>
+      <div className="inputs">
+        <div className="input">
+          <img src={user_icon} alt="User Icon" />
+          <input
+            type="text"
+            name="user"
+            placeholder="Enter Your Name"
+            value={formData.user}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div className="input">
+          <img src={email_icon} alt="Email Icon" />
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Your Email"
+            value={formData.email}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div className="input">
+          <img src={password_icon} alt="Password Icon" />
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter Your Password"
+            value={formData.password}
+            onChange={handleInputChange}
+          />
+        </div>
+      </div>
+      <div className="forgot_password">Lost Password? <span>Click Here!</span></div>
+      <div>
+        <button className="signup" onClick={handleSignup}>Sign Up</button>
+        <button className="login">Login</button>
+      </div>
+    </div>
+  );
+};
+
+export default LoginSignup;
+
+
+
+
+
+
+
+
+
+LoginSignup.css-------------------------------
+
+
+
+.container {
+         background: linear-gradient(rgb(252, 247, 247), rgb(202, 236, 255));
+         width: 100%;
+         max-width: 400px;
+         margin: 50px auto;
+         padding: 30px;
+         border-radius: 10px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+         text-align: center;
+       }
+       
+       
+       .header {
+         margin-bottom: 30px;
+       }
+       
+       .header .text {
+         font-size: 24px;
+         font-weight: bold;
+         color: #333;
+       }
+       
+       .header .underline {
+         width: 200px;
+         height: 3px;
+         background-color: rgb(218, 218, 218);
+         margin: 10px auto;
+         border-radius: 3px;
+       }
+       
+      
+       .inputs {
+         margin-top: 20px;
+       }
+       
+       
+       .input {
+         display: flex;
+         align-items: center;
+         margin-bottom: 20px;
+         border: 1px solid #ddd;
+         border-radius: 5px;
+         padding: 10px;
+         background-color: #f9f9f9;
+       }
+       
+       .input img {
+         width: 20px;
+         margin-right: 10px;
+       }
+       
+       .input input {
+         flex-grow: 1;
+         border: none;
+         outline: none;
+         font-size: 14px;
+         padding: 8px;
+         background-color: transparent;
+       }
+       
+       .input input::placeholder {
+         color: #aaa;
+       }
+       
+
+       .input input:focus {
+         border: none;
+         outline: none;
+       }
+       
+       
+       .input:hover {
+         border-color: #007BFF;
+       }
+       
+       .input:focus-within {
+         border-color: #007BFF;
+       }
+
+
+       button {
+         padding: 10px 20px;
+         font-size: 16px;
+         border: none;s
+         border-radius: 5px;
+         cursor: pointer;
+         margin: 5px;
+        
+       }
+       
+       button.signup {
+         background-color: rgb(218, 218, 218);
+         color: black;
+       }
+       
+       button.login {
+         background-color:rgb(218, 218, 218);
+         color: black
+       }
+       
+       button:hover {
+         opacity: 0.9;
+       }
+       
+       
+
+
+
+-----------app.js----------------
+
+
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AddLecturer from "./components/AddLecturer";
+import Sidebar from "./components/Sidebar";
+import LoginSignup from "./components/LoginSignup";
+import "./App.css"; 
+import Navbar from "./components/navbar";
+
+function App() {
+  return (
+    <Router>
+      <div className="app-layout">
+        <Sidebar />
+        <Navbar/>
+        <div className="main-content">
+          <Routes>
+            <Route path="/add-lecturer" element={<AddLecturer />} />
+          </Routes>
+          <Routes>
+            <Route path="/LoginSignup" element={<LoginSignup />} />
+          </Routes>
+
+          
+        </div>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+
+
+
+
+------------------------------------------------
+----------backend---------------
+
+
+const express = require("express");
+const mysql = require("mysql");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+
+const app = express();
+
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
+
+// MySQL Connection
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root", // Default MySQL username
+  password: "", // Default MySQL password
+  database: "csq_database", // Your database name
+});
+
+db.connect((err) => {
+  if (err) {
+    console.error("Error connecting to the database:", err);
+    return;
+  }
+  console.log("Connected to MySQL database!");
+});
+
+// Route to handle SignUp
+app.post("/signup", (req, res) => {
+  const { user, email, password } = req.body;
+
+  const query = `
+    INSERT INTO lecturers (user, email, password) 
+    VALUES (?, ?, ?)
+  `;
+
+  db.query(query, [user, email, password], (err, result) => {
+    if (err) {
+      console.error("Error during sign-up:", err);
+      res.status(500).send("Error signing up");
+      return;
+    }
+    res.status(200).send("Sign-up successful!");
+  });
+});
+
+// Start Server
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
+
+       
