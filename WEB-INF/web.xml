@@ -25,6 +25,16 @@
         <servlet-name>CartServlet</servlet-name>
         <url-pattern>/cart</url-pattern>
     </servlet-mapping>
+
+    
+    <servlet>
+        <servlet-name>AddItemServlet</servlet-name>
+        <servlet-class>AddItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddItemServlet</servlet-name>
+        <url-pattern>/AddItemServlet</url-pattern>
+    </servlet-mapping>
     
    
 
