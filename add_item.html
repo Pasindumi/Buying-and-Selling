@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item</title>
+    <link rel="stylesheet" href="CSS/additem.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <iframe src="Nav_Bar.html" style="width: 100%; height: 100px; border: none;"></iframe>
+    <div class="container">
+        <!-- Left Side: Business Ad -->
+        <div class="left-side">
+            <div class="ad-container" id="adContainer">
+                <img src="Images/clothing.jpg" alt="Ad 1">
+                <img src="Images/download.jpeg" alt="Ad 2" style="display: none;">
+                <img src="Images/img02.jpg" alt="Ad 3" style="display: none;">
+            </div>
+        </div>
+
+        <!-- Right Side: Add Item Form -->
+        <div class="right-side">
+            <form action="AddItemServlet" method="post" enctype="multipart/form-data">
+                <h2>Add Item Details</h2>
+
+                <!-- Section 1: Item Details -->
+                <fieldset>
+                    <legend>Item Details</legend>
+                    <label for="itemName">Item Name:</label>
+                    <input type="text" id="itemName" name="itemName" required>
+
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" required>
+
+                    <label for="mainCategory">Main Category:</label>
+                    <select id="mainCategory" name="mainCategory" required onchange="updateSubCategory()">
+                        <option value="">Select Main Category</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home</option>
+                    </select>
+
+                    <label for="subCategory">Sub Category:</label>
+                    <select id="subCategory" name="subCategory" required>
+                        <option value="">Select Sub Category</option>
+                    </select>
+                </fieldset>
+
+                <!-- Section 2: Seller Details -->
+                <fieldset>
+                    <legend>Seller Details</legend>
+                    <label for="sellerName">Seller Name:</label>
+                    <input type="text" id="sellerName" name="sellerName" required>
+
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" required></textarea>
+
+                    <label for="contactNumber">Contact Number:</label>
+                    <input type="tel" id="contactNumber" name="contactNumber" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </fieldset>
+
+                <!-- Section 3: Add Images -->
+                <fieldset>
+                    <legend>Upload Images</legend>
+                    <label for="images">Add Images:</label>
+                    <input type="file" id="images" name="images" required>
+                </fieldset>
+
+                <button type="submit">Add Item</button>
+            </form>
+        </div>
+    </div>
+    <script src="Javac/additem.js" defer></script>
+
+</body>
+</html>
