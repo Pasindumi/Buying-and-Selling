@@ -17,14 +17,36 @@
 
 
 
-    <servlet>
-        <servlet-name>CartServlet</servlet-name>
-        <servlet-class>com.cart.CartServlet</servlet-class>
+     <servlet>
+        <servlet-name>ViewCartServlet</servlet-name>
+        <servlet-class>ViewCartServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>CartServlet</servlet-name>
-        <url-pattern>/cart</url-pattern>
+        <servlet-name>ViewCartServlet</servlet-name>
+        <url-pattern>/ViewCartServlet</url-pattern>
     </servlet-mapping>
+
+
+     <servlet>
+        <servlet-name>UserProfileServlet</servlet-name>
+        <servlet-class>UserProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserProfileServlet</servlet-name>
+        <url-pattern>/UserProfileServlet</url-pattern>
+    </servlet-mapping>
+
+    
+    
+    <servlet>
+        <servlet-name>UploadProfilePictureServlet</servlet-name>
+        <servlet-class>UploadProfilePictureServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadProfilePictureServlet</servlet-name>
+        <url-pattern>/UploadProfilePictureServlet</url-pattern>
+    </servlet-mapping>
+
     
    
 

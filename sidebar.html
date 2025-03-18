@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Sidebar</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; }
+        .sidebar { width: 250px; height: 100vh; background: #fecd51; color: white; position: fixed; padding-top: 20px; }
+        .profile { text-align: center; padding: 20px; border-bottom: 1px solid #34495e; }
+        .profile img { width: 80px; height: 80px; border-radius: 50%; border: 3px solid white; cursor: pointer; }
+        .profile h3, .profile p { margin: 5px 0; color: white; }
+        .menu { list-style: none; padding: 0; margin: 0; }
+        .menu li { padding: 15px 20px; border-bottom: 1px solid #34495e; }
+        .menu li a { text-decoration: none; color: white; display: flex; align-items: center; transition: 0.3s; }
+        .menu li a:hover { background: #34495e; padding-left: 10px; }
+        .menu li a i { width: 25px; }
+        input[type="file"] { display: none; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <label for="uploadPic">
+                <img id="profilePic" src="profile_pics/default.jpg" alt="User Profile">
+            </label>
+            <input type="file" id="uploadPic" accept="image/*" onchange="uploadProfilePic()">
+            <h3 id="userName">Loading...</h3>
+            <p id="userEmail">Loading...</p>
+        </div>
+        <ul class="menu">
+            <li><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-box"></i> Products</a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i> Orders</a></li>
+        </ul>
+    </div>
+
+    <script>
+        fetch('UserProfileServlet')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('userName').textContent = data.name;
+                document.getElementById('userEmail').textContent = data.email;
+                document.getElementById('profilePic').src = 'profile_pics/' + data.profile_pic;
+            });
+
+        function uploadProfilePic() {
+            document.getElementById('uploadForm').submit();
+        }
+    </script>
+</body>
+</html>
