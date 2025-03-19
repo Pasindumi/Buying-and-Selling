@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Double-Column Navigation Bar</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  
+  <link rel="stylesheet" href="../CSS/productview.css">
+  <link rel="stylesheet" href="../CSS/navbar.css">
+
+
+</head>
+<body>
+
+  <!-- navbar -->
+  <div class="navbar">
+
+    <div class="navbar-top">
+      <div class="logo">Buy&Sell</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products...">
+        <button>Search</button>
+      </div>
+      <div class="auth-buttons">
+        <button >Login</button>
+        <button>Signup</button>
+      </div>
+    </div>
+
+   
+    <div class="navbar-bottom">
+      <div class="nav-links">
+        <a href="../Nav_Bar.html">Home</a>
+        <div class="dropdown">
+          <a href="#categories">Categories</a>
+          <div class="dropdown-content">
+            <a href="products/electronics.html">Electronics</a>
+            <a href="#fashion">Fashion</a>
+            <a href="#home-garden">Home & Garden</a>
+            <a href="#sports">Sports</a>
+          </div>
+          </div>
+        <a href="#sell">Sell</a>
+        <a href="../about_us.html">About Us</a>
+        <a href="../ContactU.html">Contact</a>
+      </div>
+      <div class="icons">
+        <i class="fa fa-shopping-cart"></i>
+        <i class="fa fa-user-circle"></i>
+      </div>
+    </div>
+  </div>
+<!-- navbar -->
+
+<body>
+    <div class="product-container">
+        <div class="product-images">
+            <img src="/products/img/Front1.png" alt="iPhone 16 Pro">
+            <div class="thumbnail">
+                <img src="/products/img/Back1.png" alt="Camera Close-up">
+                <img src="/products/img/Side1.png" alt="Side View">
+            </div>
+        </div>
+
+        <div class="product-details">
+            <h2>Apple</h2>
+            <h1>iPhone 15 Pro Max</h1>
+            <p class="price">Rs LKR 312 900.00 -LKR 351 900.00</p>
+
+            <div class="options">
+                <label>Color:</label>
+                <div class="color-options">
+                    <div class="color black selected"></div>
+                    <div class="color silver"></div>
+                    <div class="color pink"></div>
+                </div>
+            </div>
+
+            <div class="options">
+                <label>Storage:</label>
+                <div class="storage-options">
+                    <button class="selected">128GB</button>
+                    <button>256GB</button>
+                    <button>512GB</button>
+                    <button>1TB</button>
+                </div>
+            </div>
+
+            <div class="options">
+                <label>Warranty:</label>
+                <div class="warranty-options">
+                    <button class="selected">Gnext</button>
+                    <button>Apple Care</button>
+                </div>
+            </div>
+
+            <div class="quantity">
+                <button>-</button>
+                <span>1</span>
+                <button>+</button>
+            </div>
+
+            <div class="buttons">
+                <button class="add-to-cart">Add to cart</button>
+                <button class="buy-now">Buy it now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
