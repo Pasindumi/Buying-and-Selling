@@ -57,6 +57,14 @@
         <url-pattern>/AddItemServlet</url-pattern>
     </servlet-mapping>
     
-   
+   <servlet>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <servlet-class>AddToCartServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <url-pattern>/addToCart</url-pattern>
+</servlet-mapping>
 
 </web-app>
