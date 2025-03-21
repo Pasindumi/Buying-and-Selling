@@ -67,6 +67,7 @@
         <servlet-class>RetrieveUserServlet</servlet-class>
     </servlet>
     
+<<<<<<< HEAD
     <servlet-mapping>
         <servlet-name>RetrieveUserServlet</servlet-name>
         <url-pattern>/retrieveUser</url-pattern>
@@ -105,5 +106,16 @@
     <mime-type>video/mp4</mime-type>
 </mime-mapping>
 
+=======
+   <servlet>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <servlet-class>AddToCartServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>AddToCartServlet</servlet-name>
+    <url-pattern>/addToCart</url-pattern>
+</servlet-mapping>
+>>>>>>> 979293c517367caa9a8b71f1bfc9e1c3254e9794
 
 </web-app>

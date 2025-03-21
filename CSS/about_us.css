@@ -4,12 +4,12 @@ body {
          margin: 0;
          padding: 0;
          color: #333;
-         background: linear-gradient(45deg, #ffd25f, #ff8e8e);
+         
        }
        
        .header {
          text-align: center;
-         background: linear-gradient(45deg, #ffd25f, #fca6a6);
+         background: rgb(247, 252, 255);
          padding: 30px 20px;
          z-index: 0;
        }
@@ -33,7 +33,7 @@ body {
        
        .left-column, .right-column {
          flex: 1;
-         padding: 10px;
+         padding: 20px;
        }
        
        .left-column img, .right-column img {
@@ -90,3 +90,9 @@ body {
          text-decoration: underline;
        }
        
+       .animation-video {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+      
