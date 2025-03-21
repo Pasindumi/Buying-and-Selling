@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.product-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-images {
+    flex: 1;
+    text-align: center;
+}
+
+.product-images img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.thumbnail {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.thumbnail img {
+    width: 250px; /* Increase from 60px to 120px */
+    height: auto; /* Maintain aspect ratio */
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-details {
+    flex: 1;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.price {
+    font-size: 22px;
+    color: #333;
+    font-weight: bold;
+}
+
+.options {
+    margin: 15px 0;
+}
+
+.color-options, .storage-options, .warranty-options {
+    display: flex;
+    gap: 10px;
+}
+
+.color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.color.black { background: black; }
+.color.silver { background: silver; }
+.color.pink { background: palevioletred; }
+
+.selected {
+    border: 2px solid blue;
+}
+
+.storage-options button, .warranty-options button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.storage-options button.selected, .warranty-options button.selected {
+    border: 2px solid black;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.quantity button {
+    padding: 5px 10px;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-to-cart {
+    background: black;
+    color: white;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buy-now {
+    background: white;
+    color: black;
+    padding: 15px;
+    border: 2px solid black;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.selected {
+    border: 2px solid blue;
+}
+.color {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: 5px;
+    cursor: pointer;
+}
+.black { background-color: black; }
+.silver { background-color: silver; }
+.pink { background-color: pink; }
+.storage-options button, .warranty-options button, .quantity button {
+    cursor: pointer;
+    margin: 5px;
+}
