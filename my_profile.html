@@ -1,51 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Profile Interface</title>
-  <link rel="stylesheet" href="CSS/my_profile.css">
-  
-   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Profile Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; display: flex; height: 100vh; }
+        #sidebar { width: 300px; background: #2c3e50; color: white; transition: width 0.3s; overflow: hidden; display: flex; flex-direction: column; }
+        #sidebar.collapsed { width: 60px; }
+        #sidebar .profile { text-align: center; padding: 20px; border-bottom: 1px solid #34495e; }
+        #sidebar .profile img { width: 80px; height: 80px; border-radius: 50%; margin-bottom: 10px; }
+        #sidebar .profile h3, #sidebar .profile p { margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        #sidebar ul { list-style: none; padding: 0; margin: 0; flex-grow: 1; }
+        #sidebar ul li { padding: 15px 20px; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; gap: 15px; }
+        #sidebar ul li i { min-width: 20px; text-align: center; }
+        #sidebar ul li:hover { background: #34495e; }
+        #content { flex-grow: 1; padding: 20px; background: #ecf0f1; overflow-y: auto; }
+        #toggle-btn { position: fixed; top: 20px; left: 20px; cursor: pointer; color: #2c3e50; z-index: 1000; }
+        #sidebar .profile p{font-size: small;}
+    </style>
 </head>
 <body>
-
-
-         <iframe src="Nav_Bar.html" style="width: 100%; height: 100px; border: none;"></iframe>
-
-  <div class="container">
-    <h1 class="heading">Amali's Account</h1>
-    <p class="subheading">Hi, I'm Amali. I am a passionate designer and developer with experience in creating amazing shopping experience!</p>
-    <div class="profile">
-      <div class="left-section">
-        <img src="Images/pro_photos.png" alt="Profile Picture">
-        <h2>I am happy to share</h2>
-        <p>Explore Our Collection of Top-Quality Products Crafted to Meet Your Every Need!</p>
-        <button>Learn More</button>
-      </div>
-      <div class="right-section">
-        
-        <div class="card">
-          <img src="Images/buy.png" alt="Icon">
-          <h3>BUY ITEMS</h3>
-          <p>You can buy items with amaizing price ranges.</p>
-          <a href="#">More</a>
+    <i id="toggle-btn" class="fas fa-bars"></i>
+    <div id="sidebar">
+        <div class="profile">
+            <img src="https://via.placeholder.com/80" alt="Profile Picture">
+            <h3 id="userName">Loading...</h3>
+            <p id="userEmail">Loading...</p>
         </div>
-        <div class="card">
-          <img src="Images/sell.png" alt="Icon">
-          <h3>SELL ITEMS</h3>
-          <p>You can sell your items easily and quickly using our web.</p>
-          <a href="#">More</a>
-        </div>
-        <div class="card">
-          <img src="Images/activivty.jpg" alt="Icon">
-          <h3>VEIW ACTIVITIES</h3>
-          <p>View Ongoing Activities, Activity History ans etc .</p>
-          <a href="#">More</a>
-        </div>
-      </div>
+        <ul>
+            <li><i class="fas fa-user"></i> Profile Overview</li>
+            <li><i class="fas fa-history"></i> Purchase History</li>
+            <li><i class="fas fa-shopping-cart"></i> Sales History</li>
+            <li><i class="fas fa-heart"></i> Saved Items</li>
+            <li><i class="fas fa-bell"></i> Notifications</li>
+            <li><i class="fas fa-wallet"></i> Payment Methods</li>
+            <li><i class="fas fa-cog"></i> Settings</li>
+            <li><i class="fas fa-sign-out-alt"></i> Logout</li>
+        </ul>
     </div>
-  </div>
+    <div id="content">
+        <h1>Welcome to Your Profile</h1>
+        <p>Manage your purchases, sales, and settings right here.</p>
+    </div>
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('toggle-btn');
+        toggleBtn.addEventListener('click', () => sidebar.classList.toggle('collapsed'));
+    
+        // Fetch user data from servlet
+        const userId = 1; // Example User ID
+        fetch(`/buyonses/profile?id=${userId}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("Data received:", data); // Log the data to the console
+                if (data.name && data.email) {
+                    document.getElementById('userName').textContent = data.name;
+                    document.getElementById('userEmail').textContent = data.email;
+                } else if (data.error) {
+                    alert(data.error); // Display error message if user not found
+                } else {
+                    alert("Invalid data received from server.");
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching user data:", error);
+                alert("Error fetching user data. Check console for details.");
+            });
+    </script>
 </body>
 </html>

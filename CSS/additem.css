@@ -13,11 +13,13 @@ body {
 
 .left-side {
     width: 30%;
-    background-color: #343a40;
+    background-color: #ffffff;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    left: 50px;
 }
 
 .ad-container {
