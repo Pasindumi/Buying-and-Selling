@@ -28,24 +28,27 @@
 
 
      <servlet>
-        <servlet-name>UserProfileServlet</servlet-name>
-        <servlet-class>UserProfileServlet</servlet-class>
+        <servlet-name>RetrieveUserProfile</servlet-name>
+        <servlet-class>RetrieveUserProfile</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>UserProfileServlet</servlet-name>
-        <url-pattern>/UserProfileServlet</url-pattern>
+        <servlet-name>RetrieveUserProfile</servlet-name>
+        <url-pattern>/RetrieveUserProfile</url-pattern>
     </servlet-mapping>
 
-    
-    
-    <servlet>
-        <servlet-name>UploadProfilePictureServlet</servlet-name>
-        <servlet-class>UploadProfilePictureServlet</servlet-class>
+
+     <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.yourpackage.UserServlet</servlet-class>
     </servlet>
+
+
     <servlet-mapping>
-        <servlet-name>UploadProfilePictureServlet</servlet-name>
-        <url-pattern>/UploadProfilePictureServlet</url-pattern>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/users</url-pattern>
     </servlet-mapping>
+    
+    
 
     
     <servlet>
@@ -56,7 +59,51 @@
         <servlet-name>AddItemServlet</servlet-name>
         <url-pattern>/AddItemServlet</url-pattern>
     </servlet-mapping>
+
+
+
+     <servlet>
+        <servlet-name>RetrieveUserServlet</servlet-name>
+        <servlet-class>RetrieveUserServlet</servlet-class>
+    </servlet>
     
-   
+    <servlet-mapping>
+        <servlet-name>RetrieveUserServlet</servlet-name>
+        <url-pattern>/retrieveUser</url-pattern>
+    </servlet-mapping>
+
+
+
+
+     <servlet>
+        <servlet-name>ContactFormServlet</servlet-name>
+        <servlet-class>ContactFormServlet</servlet-class>
+    </servlet>
+
+    <!-- Servlet mapping -->
+    <servlet-mapping>
+        <servlet-name>ContactFormServlet</servlet-name>
+        <url-pattern>/ContactFormServlet</url-pattern>
+    </servlet-mapping>
+    
+
+
+
+    <servlet>
+        <servlet-name>RetrieveCustomerServlet</servlet-name>
+        <servlet-class>RetrieveCustomerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RetrieveCustomerServlet</servlet-name>
+        <url-pattern>/RetrieveCustomerServlet</url-pattern>
+    </servlet-mapping>
+
+
+
+    <mime-mapping>
+    <extension>mp4</extension>
+    <mime-type>video/mp4</mime-type>
+</mime-mapping>
+
 
 </web-app>

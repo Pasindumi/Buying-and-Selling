@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         body { margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; }
-        .sidebar { width: 250px; height: 100vh; background: #fecd51; color: white; position: fixed; padding-top: 20px; }
+        .sidebar { width: 250px; height: 100vh; background: linear-gradient(45deg, #ffd25f, #f9b45b); color: white; position: fixed; padding-top: 20px; }
         .profile { text-align: center; padding: 20px; border-bottom: 1px solid #34495e; }
         .profile img { width: 80px; height: 80px; border-radius: 50%; border: 3px solid white; cursor: pointer; }
         .profile h3, .profile p { margin: 5px 0; color: white; }
@@ -37,17 +37,24 @@
     </div>
 
     <script>
-        fetch('UserProfileServlet')
+        // Fetch user profile data from the servlet
+        fetch('RetrieveUserProfile')
             .then(response => response.json())
             .then(data => {
-                document.getElementById('userName').textContent = data.name;
-                document.getElementById('userEmail').textContent = data.email;
-                document.getElementById('profilePic').src = 'profile_pics/' + data.profile_pic;
+                if (data.name) {
+                    document.getElementById('userName').textContent = data.name;
+                    document.getElementById('userEmail').textContent = data.email;
+                    document.getElementById('profilePic').src = 'profile_pics/' + data.profile_photo;
+                } else {
+                    document.getElementById('userName').textContent = 'No user found';
+                    document.getElementById('userEmail').textContent = '';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching user data:', error);
+                document.getElementById('userName').textContent = 'Error loading data';
+                document.getElementById('userEmail').textContent = '';
             });
-
-        function uploadProfilePic() {
-            document.getElementById('uploadForm').submit();
-        }
     </script>
 </body>
 </html>
