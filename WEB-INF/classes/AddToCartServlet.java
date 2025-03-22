@@ -53,7 +53,7 @@ public class AddToCartServlet extends HttpServlet {
             if (rowsInserted > 0) {
                 response.getWriter().write(" Item added to cart successfully!");
             } else {
-                response.getWriter().write("❌ Failed to add item.");
+                response.getWriter().write("Failed to add item.");
             }
 
         } catch (Exception e) {
