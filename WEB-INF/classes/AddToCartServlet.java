@@ -58,7 +58,7 @@ public class AddToCartServlet extends HttpServlet {
 
         } catch (Exception e) {
             e.printStackTrace();
-            response.getWriter().write("❌ Error: " + e.getMessage());
+            response.getWriter().write("Error: " + e.getMessage());
         } finally {
             // 6️⃣ Close Resources
             try {
