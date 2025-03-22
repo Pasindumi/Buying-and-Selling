@@ -1,195 +1,199 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-    font-family: Arial, sans-serif;
-  }
-
- 
-  .navbar {
-    display: flex;
-    flex-direction: column;
-    width: 1510px; /* Example fixed width */
-    height: 85px;
-    position: absolute;
-    right: -5px;
-    background: linear-gradient(45deg, #fff2d3, #fff2d3);
-    color: rgb(250, 121, 121);
-    box-shadow: 0px 4px 10px );
-    z-index: 100;
+body {
+  font-family: Arial, sans-serif;
 }
 
 
+.navbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Make the navbar stretch across the page */
+  box-sizing: border-box; /* Ensures padding doesn’t affect width */
+  background: linear-gradient(45deg, #ffd25f, #ff8e8e);
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* Ensure navbar stays on top */
+}
 
-  .navbar-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
 
-  .navbar-top .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-  }
+.navbar-top .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
 
+.navbar-top .search-bar {
+  display: flex;
+  align-items: center;
+  width: 40%;
+  position: relative;
+  left: -100px;
+}
+
+.navbar-top .search-bar input {
+  width: 90%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.navbar-top .search-bar button {
+  padding: 8px 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.navbtn{
+  padding: 8px 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+
+}
+.navbar-top .auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar-top .auth-buttons button {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ff7e5f;
+  background: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar-top .auth-buttons button:hover {
+  background: #ffd700;
+  color: #333;
+}
+
+
+.navbar-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-bottom .nav-links {
+  display: flex; 
+  justify-content: center; 
+  gap: 105px; 
+  width: 100%; 
+  text-align: center; 
+}
+
+.navbar-bottom .nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s;
+  text-align: center;
+}
+
+.navbar-bottom .nav-links a:hover {
+  color: #00fff7;
+}
+
+   /* Dropdown Menu */
+   .dropdown {
+  position: relative;
+  z-index: 9999;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background:linear-gradient(45deg, #ffd25f, #ff8e8e);
+  color: black;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 9999;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  color: black;
+  padding: 10px 20px;
+  display: block;
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #db855c;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  
+}
+
+.navbar-bottom .icons {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-bottom .icons i {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar-bottom .icons i:hover {
+  color: #ffd700;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
   .navbar-top .search-bar {
-    display: flex;
-    align-items: center;
-    width: 40%;
-    position: relative;
-    left: -100px;
+    width: 80%;
   }
 
-  .navbar-top .search-bar input {
-    width: 90%;
-    padding: 8px;
-    border: none;
-    border-radius: 4px 0 0 4px;
-    outline: none;
-  }
-
-  .navbar-top .search-bar button {
-    padding: 8px 15px;
-    background-color: #333;
-    color: rgb(254, 254, 254);
-    border: none;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-  }
-
- 
-  .navbar-top .auth-buttons {
-    display: flex;
-    gap: 10px;
-  }
-
-  .navbar-top .auth-buttons button {
-    padding: 8px 15px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #ff7e5f;
-    background: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .navbar-top .auth-buttons button:hover {
-    background: #ffd700;
-    color: #333;
-  }
-
- 
   .navbar-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
-
-  .navbar-bottom .nav-links {
-    display: flex; 
-    justify-content: center; 
-    gap: 105px; 
-    width: 100%; 
-    text-align: center; 
-  }
-
-  .navbar-bottom .nav-links a {
-    text-decoration: none;
-    color: rgb(62, 0, 17);
-    font-size: 1rem;
-    transition: color 0.3s;
+    flex-wrap: wrap;
     text-align: center;
   }
 
-  .navbar-bottom .nav-links a:hover {
-    color: #00fff7;
-  }
-
-     /* Dropdown Menu */
-     .dropdown {
-    position: relative;
-    z-index: 9999;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background:linear-gradient(45deg, #ffd25f, #ff8e8e);
-    color: black;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    z-index: 9999;
-  }
-
-  .dropdown-content a {
-    text-decoration: none;
-    color: black;
-    padding: 10px 20px;
-    display: block;
-    transition: background 0.3s;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #db855c;
-    color: white;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-    
+  .navbar-bottom .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   .navbar-bottom .icons {
-    display: flex;
-    gap: 15px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
   }
 
-  .navbar-bottom .icons i {
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: color 0.3s;
+  .navbar-top .auth-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
   }
-
-  .navbar-bottom .icons i:hover {
-    color: #ffd700;
-  }
-
-  /* Responsive Design */
-  @media screen and (max-width: 768px) {
-    .navbar-top .search-bar {
-      width: 80%;
-    }
-
-    .navbar-bottom {
-      flex-wrap: wrap;
-      text-align: center;
-    }
-
-    .navbar-bottom .nav-links {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .navbar-bottom .icons {
-      justify-content: center;
-      width: 100%;
-      margin-top: 10px;
-    }
-
-    .navbar-top .auth-buttons {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-  }
+  
+}

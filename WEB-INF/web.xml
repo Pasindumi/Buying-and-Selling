@@ -57,4 +57,26 @@
         <url-pattern>/profile</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+    <servlet-name>AddToCartServlets</servlet-name>
+    <servlet-class>AddToCartServlets</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>AddToCartServlets</servlet-name>
+    <url-pattern>/addToCart</url-pattern>
+</servlet-mapping>
+
+
+  <servlet>
+        <servlet-name>LoginServletss</servlet-name>
+        <servlet-class>LoginServletss</servlet-class>
+    </servlet>
+
+    
+    <servlet-mapping>
+        <servlet-name>LoginServletss</servlet-name>
+        <url-pattern>/LoginServletss</url-pattern>
+    </servlet-mapping>
+
 </web-app>

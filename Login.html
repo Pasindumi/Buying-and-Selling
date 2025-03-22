@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Register</title>
+    
+    <!-- CSS Links -->
+    
+
+    <link rel="stylesheet" href="CSS/Login.css">
+</head>
+<body>
+
+    <!-- Navbar container -->
+    <div id="navbar"></div>
+
+    <div class="container" id="auth-container">
+        <!-- Login Form -->
+        <div id="login-form">
+            <h2>Login</h2>
+            <form action="LoginServletss" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="login-email" name="email" required>
+
+                <label for="password">Password:</label>
+                <div class="password-toggle">
+                    <input type="password" id="login-password" name="password" required>
+                    <button type="button" onclick="togglePasswordVisibility('login-password')">Show</button>
+                </div>
+
+                <input type="hidden" name="action" value="login">
+                <button type="submit">Login</button>
+            </form>
+            <div class="toggle">
+                <p>Don't have an account? <a href="#" onclick="showRegister()">Register here</a></p>
+            </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="register-form" style="display: none;">
+            <h2>Register</h2>
+            <form action="registerservlets" method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" id="register-name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="register-email" name="email" required>
+
+                <label for="password">Password:</label>
+                <div class="password-toggle">
+                    <input type="password" id="register-password" name="password" required>
+                    <button type="button" onclick="togglePasswordVisibility('register-password')">Show</button>
+                </div>
+
+                <label for="role">Role:</label>
+                <select id="register-role" name="role" required>
+                    <option value="customer">Customer</option>
+                    <option value="supplier">Supplier</option>
+                    <option value="admin">Admin</option>
+                </select>
+
+                <input type="hidden" name="action" value="register">
+                <button type="submit">Register</button>
+            </form>
+            <div class="toggle">
+                <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`,
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.userId) {
+                    // Store the user ID in session storage
+                    sessionStorage.setItem('userId', data.userId);
+
+                    // Redirect to the sidebar page
+                    window.location.href = '/Side_bar.html';
+                } else {
+                    alert('Login failed. Please check your credentials.');
+                }
+            })
+            .catch(error => {
+                console.error('Error during login:', error);
+                alert('An error occurred during login.');
+            });
+        });
+    </script>
+
+</body>
+</html>

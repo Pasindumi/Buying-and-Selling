@@ -3,219 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Profile Page</title>
-    <link rel="stylesheet" href="CSS/navbar.css">
-    <link rel="stylesheet" href="CSS/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Buy & Sell Profile</title>
     <style>
-        /* Hide scrollbars for the entire page */
         body {
+           
+            background-color: #f5f5f5;
             margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            height: 100vh;
-            overflow: hidden; /* Prevent scrolling on the entire page */
-        }
-
-        /* Hide scrollbars for the sidebar */
-        #sidebar {
-            width: 300px;
-            position: relative;
-            top: 85px;
-            background: #fff2d3;
-            color: rgb(74, 1, 1);
-            transition: width 0.3s;
-            overflow: hidden; /* Prevent scrolling in the sidebar */
+            padding: 0;
+           
+            height: 100vh; /* Full viewport height */
             display: flex;
             flex-direction: column;
         }
-
-        #sidebar.collapsed {
-            width: 60px;
-        }
-
-        #sidebar .profile {
-            text-align: center;
+        .container {
+            display: flex;
+            flex: 1; /* Take up remaining space */
             padding: 20px;
-            border-bottom: 1px solid #34495e;
+            gap: 20px; /* Spacing between main content and sidebar */
+        }
+        .main-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            right: -400px;
+            width: 500px;
+          
         }
 
-        #sidebar .profile img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        #sidebar .profile h3,
-        #sidebar .profile p {
-            margin: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        #sidebar ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            flex-grow: 1;
-        }
-
-        #sidebar ul li {
-            padding: 15px 20px;
-            cursor: pointer;
-            transition: background 0.2s;
+        .product {
             display: flex;
             align-items: center;
-            gap: 15px;
-        }
-
-        #sidebar ul li i {
-            min-width: 20px;
-            text-align: center;
-        }
-
-        #sidebar ul li:hover {
-            background: #ffa1a1;
-        }
-
-        /* Hide scrollbars for the main content */
-        #content {
-            flex-grow: 1;
-            padding: 20px;
-            background: #ecf0f1;
-            overflow: hidden; /* Prevent scrolling in the main content */
-        }
-
-        #toggle-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
+            justify-content: flex-end;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
             cursor: pointer;
-            color: #2c3e50;
-            z-index: 1000;
         }
-
-        #sidebar .profile p {
-            font-size: small;
+        .product img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-left: 15px;
         }
-
-        /* Hide scrollbars for the navbar */
-        .navbar {
-            overflow: hidden; /* Prevent scrolling in the navbar */
+        .history-box {
+            display: none;
+            background: #eef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
         }
+        
 
-        /* Hide scrollbars for all elements */
-        ::-webkit-scrollbar {
-            display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+        /* Hide scrollbars */
+        .main-content::-webkit-scrollbar, .sidebar::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, and Opera */
         }
-
-        /* Hide scrollbars for Firefox */
-        * {
-            scrollbar-width: none;
-        }
-
-        /* Hide scrollbars for IE and Edge */
-        * {
-            -ms-overflow-style: none;
+        .main-content, .sidebar {
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
         }
     </style>
 </head>
 <body>
-    <i id="toggle-btn" class="fas fa-bars"></i>
-    <div id="sidebar">
-        <div class="profile">
-            <img src="https://via.placeholder.com/80" alt="Profile Picture">
-            <h3 id="userName">Loading...</h3>
-            <p id="userEmail">Loading...</p>
-        </div>
-        <ul>
-            <li><i class="fas fa-user"></i> Profile Overview</li>
-            <li><i class="fas fa-history"></i> Purchase History</li>
-            <li><i class="fas fa-shopping-cart"></i> Sales History</li>
-            <li><i class="fas fa-heart"></i> Saved Items</li>
-            <li><i class="fas fa-bell"></i> Notifications</li>
-            <li><i class="fas fa-wallet"></i> Payment Methods</li>
-            <li><i class="fas fa-cog"></i> Settings</li>
-            <li><i class="fas fa-sign-out-alt"></i> Logout</li>
-        </ul>
-    </div>
+   
+    <div id="navbar" style="z-index: 10"></div>
+    
+    <div class="sidebar" id="sidebar-container"></div> 
 
-    <div class="navbar">
-        <div class="navbar-top">
-            <div class="logo">Buy&Sell</div>
-            <div class="search-bar">
-                <input type="text" placeholder="Search products...">
-                <button>Search</button>
+
+    <div class="container">
+        <div class="main-content">
+            <h2>Last Sold Products</h2>
+            <div class="product" onclick="showHistory('history1')">
+                <p>Item Name 1</p>
+                <img src="sold_item1.jpg" alt="Sold Item">
             </div>
-            <div class="auth-buttons">
-                <button>Login</button>
-                <button>Signup</button>
+            <div id="history1" class="history-box">Sold to User A on 2025-03-15</div>
+
+            <h2>Last Purchased Products</h2>
+            <div class="product">
+                <p>Item Name 2</p>
+                <img src="bought_item1.jpg" alt="Bought Item">
             </div>
         </div>
-
-        <div class="navbar-bottom">
-            <div class="nav-links">
-                <a href="Nav_Bar.html">Home</a>
-                <div class="dropdown">
-                    <a href="#categories">Categories</a>
-                    <div class="dropdown-content">
-                        <a href="products/electronics.html">Electronics</a>
-                        <a href="#fashion">Fashion</a>
-                        <a href="#home-garden">Home & Garden</a>
-                        <a href="#sports">Sports</a>
-                    </div>
-                </div>
-                <a href="#sell">Sell</a>
-                <a href="about_us.html">About Us</a>
-                <a href="ContactU.html">Contact</a>
+        
+        <div class="sidebar">
+            <h3>Selling Products (History)</h3>
+            <div class="product">
+                <p>Item Name 3 - $100</p>
+                <img src="selling_item1.jpg" alt="Selling Item">
             </div>
-            <div class="icons">
-                <i class="fa fa-shopping-cart"></i>
-                <i class="fa fa-user-circle"></i>
-            </div>
+            <a href="sidebar.html" class="sidebar-link">View More</a>
         </div>
     </div>
 
     <script>
-        const sidebar = document.getElementById('sidebar');
-        const toggleBtn = document.getElementById('toggle-btn');
-        toggleBtn.addEventListener('click', () => sidebar.classList.toggle('collapsed'));
+  fetch('./Nav_Bar.html')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => document.getElementById('navbar').innerHTML = data)
+    .catch(error => console.error('Error loading navbar:', error));
 
-        // Fetch user data from servlet
-        const userId = 1; // Example User ID
-        fetch(`/buyonses/profile?id=${userId}`)
+    fetch('./Side_bar.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                return response.json();
+                return response.text();
             })
-            .then(data => {
-                console.log("Data received:", data); // Log the data to the console
-                if (data.name && data.email) {
-                    document.getElementById('userName').textContent = data.name;
-                    document.getElementById('userEmail').textContent = data.email;
-                } else if (data.error) {
-                    alert(data.error); // Display error message if user not found
-                } else {
-                    alert("Invalid data received from server.");
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching user data:", error);
-                alert("Error fetching user data. Check console for details.");
-            });
+            .then(data => document.getElementById('sidebar-container').innerHTML = data)
+            .catch(error => console.error('Error loading sidebar:', error));
 
-        const swiper = new Swiper('.myslider', {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 10,
-            autoplay: {
-                delay: 2000,
-            },
-        });
+   
+
+        function showHistory(id) {
+            var history = document.getElementById(id);
+            history.style.display = history.style.display === 'none' ? 'block' : 'none';
+        }
     </script>
 </body>
 </html>
