@@ -78,5 +78,14 @@
         <servlet-name>LoginServletss</servlet-name>
         <url-pattern>/LoginServletss</url-pattern>
     </servlet-mapping>
+<servlet>
+        <servlet-name>CartServletsses</servlet-name>
+        <servlet-class>CartServletsses</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CartServletsses</servlet-name>
+        <url-pattern>/CartServlet</url-pattern>
+    </servlet-mapping>
 
 </web-app>
