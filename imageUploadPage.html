@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 01 Complete</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f4f4f4;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            width: 100%;
+            background: #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .progress {
+            width: 33.33%; /* Stage 01 is 33.33% complete */
+            height: 10px;
+            background: #007bff;
+            border-radius: 8px;
+        }
+        .message {
+            font-size: 18px;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Sell Product Stage 01 is Complete!</h1>
+        
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="message">
+            <i class="fas fa-check-circle"></i> Stage 01 is complete. Please proceed to the next stage.
+        </div>
+
+        <!-- Proceed Button -->
+        <button class="btn" onclick="proceedToNextStage()">Proceed to Next Stage</button>
+
+        <!-- Additional Features -->
+        <div class="footer">
+            <p>Need help? <a href="/contact">Contact Support</a></p>
+            <p>View your uploaded details <a href="/view-images">here</a>.</p>
+        </div>
+    </div>
+
+    <script>
+        // Function to handle the "Proceed to Next Stage" button click
+        function proceedToNextStage() {
+            alert("Redirecting to the next stage...");
+            window.location.href = "/next-stage"; // Replace with the actual URL for the next stage
+        }
+    </script>
+</body>
+</html>

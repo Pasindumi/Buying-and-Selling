@@ -79,4 +79,23 @@
         <url-pattern>/LoginServletses</url-pattern>
     </servlet-mapping>
 
+      <servlet>
+        <servlet-name>ImageUploadServletes</servlet-name>
+        <servlet-class>ImageUploadServletes</servlet-class>
+    </servlet>
+
+    
+    <servlet-mapping>
+        <servlet-name>ImageUploadServletes</servlet-name>
+        <url-pattern>/uploadImage</url-pattern>
+    </servlet-mapping>
+<servlet>
+    <servlet-name>FetchItemIdServlet</servlet-name>
+    <servlet-class>FetchItemIdServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>FetchItemIdServlet</servlet-name>
+    <url-pattern>/fetchItemId</url-pattern>
+</servlet-mapping>
 </web-app>
+ 
