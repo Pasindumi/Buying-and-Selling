@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/addToCart")
-public class AddToCartServlets extends HttpServlet {
+public class AddToCartServletses extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    
+    // Database credentials (Change these based on your setup)
     private static final String DB_URL = "jdbc:mysql://localhost:3306/oop_project";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
@@ -30,13 +30,13 @@ public class AddToCartServlets extends HttpServlet {
         PreparedStatement stmt = null;
 
         try {
-            
+            // 1️⃣ Load MySQL JDBC Driver
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            
+            // 2️⃣ Connect to Database
             conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 
-            
+            // 3️⃣ Prepare SQL Query to Insert Data
             String sql = "INSERT INTO cart (product_name, color, storage, warranty, quantity, price) VALUES (?, ?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, productName);
@@ -46,21 +46,21 @@ public class AddToCartServlets extends HttpServlet {
             stmt.setInt(5, quantity);
             stmt.setDouble(6, price);
 
-            
+            // 4️⃣ Execute Query
             int rowsInserted = stmt.executeUpdate();
 
-            
+            // 5️⃣ Send Response
             if (rowsInserted > 0) {
-                response.getWriter().write("Item added to cart successfully!");
+                response.getWriter().write("✅ Item added to cart successfully!");
             } else {
-                response.getWriter().write("Failed to add item.");
+                response.getWriter().write("❌ Failed to add item.");
             }
 
         } catch (Exception e) {
             e.printStackTrace();
-            response.getWriter().write("Error: " + e.getMessage());
+            response.getWriter().write("❌ Error: " + e.getMessage());
         } finally {
-            
+            // 6️⃣ Close Resources
             try {
                 if (stmt != null) stmt.close();
                 if (conn != null) conn.close();

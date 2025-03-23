@@ -58,44 +58,25 @@
     </servlet-mapping>
 
     <servlet>
-    <servlet-name>AddToCartServlets</servlet-name>
-    <servlet-class>AddToCartServlets</servlet-class>
+    <servlet-name>AddToCartServletses</servlet-name>
+    <servlet-class>AddToCartServletses</servlet-class>
 </servlet>
 
 <servlet-mapping>
-    <servlet-name>AddToCartServlets</servlet-name>
+    <servlet-name>AddToCartServletses</servlet-name>
     <url-pattern>/addToCart</url-pattern>
 </servlet-mapping>
 
 
   <servlet>
-        <servlet-name>LoginServletses</servlet-name>
-        <servlet-class>LoginServletses</servlet-class>
+        <servlet-name>LoginServletss</servlet-name>
+        <servlet-class>LoginServletss</servlet-class>
     </servlet>
 
     
     <servlet-mapping>
-        <servlet-name>LoginServletses</servlet-name>
-        <url-pattern>/LoginServletses</url-pattern>
+        <servlet-name>LoginServletss</servlet-name>
+        <url-pattern>/LoginServletss</url-pattern>
     </servlet-mapping>
 
-      <servlet>
-        <servlet-name>ImageUploadServletes</servlet-name>
-        <servlet-class>ImageUploadServletes</servlet-class>
-    </servlet>
-
-    
-    <servlet-mapping>
-        <servlet-name>ImageUploadServletes</servlet-name>
-        <url-pattern>/uploadImage</url-pattern>
-    </servlet-mapping>
-<servlet>
-    <servlet-name>FetchItemIdServlet</servlet-name>
-    <servlet-class>FetchItemIdServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-    <servlet-name>FetchItemIdServlet</servlet-name>
-    <url-pattern>/fetchItemId</url-pattern>
-</servlet-mapping>
 </web-app>
- 
