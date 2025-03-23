@@ -88,4 +88,15 @@
         <url-pattern>/CartServlet</url-pattern>
     </servlet-mapping>
 
+    
+    <servlet>
+        <servlet-name>shippingservlet</servlet-name>
+        <servlet-class>shippingservlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>shippingservlet</servlet-name>
+        <url-pattern>/shippingservlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>
