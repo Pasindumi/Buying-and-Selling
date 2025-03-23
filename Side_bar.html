@@ -123,10 +123,141 @@
             position: relative;
             top:120px;
         }
+
+
+        #video-background {
+       
+            position: absolute;
+        top: 30px;
+        left: 400px;
+        width: 600px;
+        height: 550px;
+        
+        z-index: -1;
+    }
+
+    
+    #main-image {
+        width: 300px;  /* Set width */
+        height: auto;  /* Auto height */
+        display: block; /* Prevents inline spacing */
+        margin: 20px auto; /* Centers the image */
+        position: relative;
+        right: -500px;
+        top: 120px;
+        
+    }
+
+    .history-container {
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            right: -400px;
+            top: 180px;
+            background: #fff;
+            padding: 20px;
+            
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #3f355b;
+        }
+
+        .product-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-item {
+            background: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .product-item:hover {
+            background: #e0e0e0;
+        }
+
+        .product-name {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .product-date {
+            color: #777;
+            font-size: 0.9em;
+        }
+
+
+
+        .sell-container {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 25px;
+        
+        text-align: center;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        position: relative;
+        right: -500px;
+        top: -200px;
+        margin: auto;
+    }
+
+    .sell-container button {
+        background: #74bdbd;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .sell-container button:hover {
+        background: #216988;
+    }
+
+
+
     </style>
 </head>
 <body>
     <div id="navbar" style="z-index: 10"></div>
+
+    <video id="video-background" autoplay loop muted playsinline>
+        <source src="Images/shopinnn.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+    <img id="main-image" src="Images/lim.jpeg" alt="My Image">
+
+
+    <div class="history-container">
+        <h2>Purchase History</h2>
+        <ul class="product-list" id="productList"></ul>
+    </div>
+
+
+
+
+    <div class="sell-container">
+        <h2>Sell Your Item with Us</h2>
+        <p>We provide a secure and easy platform to sell your items. List your products quickly and reach potential buyers effortlessly.</p>
+        <button onclick="window.location.href='add_items.html'">Sell Now</button>
+    </div>
+
+
+
     
     <div id="sidebar">
         <div class="set">
@@ -188,7 +319,7 @@
     });
         } else {
             alert("User ID missing, redirecting to login.");
-            window.location.href = "Login.html";
+           window.location.href = "Login.html";
         }
         fetch('./Nav_Bar.html')
     .then(response => {
@@ -199,6 +330,30 @@
     })
     .then(data => document.getElementById('navbar').innerHTML = data)
     .catch(error => console.error('Error loading navbar:', error));
+
+
+
+
+
+
+    const purchaseHistory = [
+            { name: "Wireless Headphones", date: "March 10, 2025" },
+            { name: "Gaming Mouse", date: "March 5, 2025" },
+            { name: "Mechanical Keyboard", date: "February 28, 2025" },
+            { name: "Smartwatch", date: "February 20, 2025" }
+        ];
+
+        function displayHistory() {
+            const list = document.getElementById("productList");
+            purchaseHistory.forEach(item => {
+                const li = document.createElement("li");
+                li.classList.add("product-item");
+                li.innerHTML = `<span class="product-name">${item.name}</span> <span class="product-date">${item.date}</span>`;
+                list.appendChild(li);
+            });
+        }
+
+        displayHistory();
 
     </script>
     
