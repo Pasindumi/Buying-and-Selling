@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class LoginServletss extends HttpServlet {
+public class LoginServletses extends HttpServlet {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/oop_project";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
@@ -31,20 +31,18 @@ public class LoginServletss extends HttpServlet {
             ResultSet rs = pst.executeQuery();
 
             if (rs.next()) {
-                // If the credentials match, create a session and send the user ID back to the client
                 int userId = rs.getInt("id");
-
-                // Store the user ID in the session (optional, if needed for server-side use)
+            
+                // Store the user ID in the session (optional)
                 HttpSession session = request.getSession();
                 session.setAttribute("userId", userId);
-
-                // Send the user ID back to the client as a JSON response
-                response.setContentType("application/json");
-                response.getWriter().print("{\"userId\": " + userId + "}");
+            
+                // Redirect to the sidebar.html page
+                response.sendRedirect("Side_bar.html?userId=" + userId);
             } else {
-                // If credentials don't match, show an error message
                 response.getWriter().println("Invalid email or password");
             }
+            
 
             // Close connection
             conn.close();

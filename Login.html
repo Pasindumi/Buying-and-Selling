@@ -13,13 +13,14 @@
 <body>
 
     <!-- Navbar container -->
-    <div id="navbar"></div>
+    <div id="navbar" style="z-index: 100;"></div>
+
 
     <div class="container" id="auth-container">
         <!-- Login Form -->
         <div id="login-form">
             <h2>Login</h2>
-            <form action="LoginServletss" method="post">
+            <form action="LoginServletses" method="post">
                 <label for="email">Email:</label>
                 <input type="email" id="login-email" name="email" required>
 
@@ -70,36 +71,53 @@
     </div>
 
     <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
+        // Fetch and load the navbar dynamically
+        fetch('./Nav_Bar.html')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => document.getElementById('navbar').innerHTML = data)
+    .catch(error => console.error('Error loading navbar:', error));
 
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
 
-            fetch('/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`,
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.userId) {
-                    // Store the user ID in session storage
-                    sessionStorage.setItem('userId', data.userId);
+        function showLogin() {
+            document.getElementById('register-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+        }
 
-                    // Redirect to the sidebar page
-                    window.location.href = '/Side_bar.html';
-                } else {
-                    alert('Login failed. Please check your credentials.');
-                }
-            })
-            .catch(error => {
-                console.error('Error during login:', error);
-                alert('An error occurred during login.');
-            });
-        });
+        function showRegister() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'block';
+        }
+
+        function togglePasswordVisibility(inputId) {
+            const input = document.getElementById(inputId);
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+
+        
+
+        fetch('/LoginServletses', {
+    method: 'POST',
+    body: new URLSearchParams({
+        email: email,
+        password: password
+    })
+})
+.then(response => response.json())
+.then(data => {
+    if (data.userId) {
+        sessionStorage.setItem("userId", data.userId);
+        window.location.href = "sidebar.html";
+    } else {
+        alert("Invalid email or password");
+    }
+})
+.catch(error => console.error("Error:", error));
+
     </script>
 
 </body>

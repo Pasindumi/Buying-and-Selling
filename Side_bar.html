@@ -126,7 +126,8 @@
     </style>
 </head>
 <body>
-  
+    <div id="navbar" style="z-index: 10"></div>
+    
     <div id="sidebar">
         <div class="set">
         <div class="profile">
@@ -153,34 +154,52 @@
     </div>
 
     <script>
-        let userId = sessionStorage.getItem("userId"); // Get user ID from session storage
-    
-        if (userId) {
-            fetch('/profile?id=' + userId, {
-                method: 'GET',
-                credentials: 'same-origin'  // Ensures that session data is sent with the request
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data.name && data.email) {
-                    document.getElementById('userName').textContent = data.name; // Set name
-                    document.getElementById('userEmail').textContent = data.email; // Set email
-                } else {
-                    alert("Error: " + (data.error || "Unknown error"));
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching user data:", error);
-                alert("Error fetching user data.");
-            });
-        } else {
-            alert("User ID is missing. Please log in.");
+         // Function to get query parameters from the URL
+         function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
         }
+
+        // Retrieve the userId from the URL
+        let userId = getQueryParam('userId');
+
+        if (userId) {
+            // Store the userId in sessionStorage if needed
+            sessionStorage.setItem("userId", userId);
+
+            fetch('/byuyones/profile?id=' + userId)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.error) {
+            alert(data.error);
+        } else {
+            document.getElementById('userName').textContent = data.name;
+            document.getElementById('userEmail').textContent = data.email;
+        }
+    })  
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Failed to load profile data");
+    });
+        } else {
+            alert("User ID missing, redirecting to login.");
+            window.location.href = "Login.html";
+        }
+        fetch('./Nav_Bar.html')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => document.getElementById('navbar').innerHTML = data)
+    .catch(error => console.error('Error loading navbar:', error));
+
     </script>
     
 </body>

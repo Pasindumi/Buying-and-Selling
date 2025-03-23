@@ -69,14 +69,14 @@
 
 
   <servlet>
-        <servlet-name>LoginServletss</servlet-name>
-        <servlet-class>LoginServletss</servlet-class>
+        <servlet-name>LoginServletses</servlet-name>
+        <servlet-class>LoginServletses</servlet-class>
     </servlet>
 
     
     <servlet-mapping>
-        <servlet-name>LoginServletss</servlet-name>
-        <url-pattern>/LoginServletss</url-pattern>
+        <servlet-name>LoginServletses</servlet-name>
+        <url-pattern>/LoginServletses</url-pattern>
     </servlet-mapping>
 
 </web-app>
