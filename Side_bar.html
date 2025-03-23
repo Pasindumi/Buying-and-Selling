@@ -280,9 +280,47 @@
 
 
     </style>
+      <link rel="stylesheet" href="CSS/navbar.css">
 </head>
 <body>
-    <div id="navbar" style="z-index: 10"></div>
+   <!-- navbar -->
+   <div class="navbar">
+
+    <div class="navbar-top">
+      <div class="logo">Buy&Sell</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products...">
+        <button>Search</button>
+      </div>
+      <div class="auth-buttons">
+        <button >Login</button>
+        <button>Signup</button>
+      </div>
+    </div>
+
+   
+    <div class="navbar-bottom">
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <div class="dropdown">
+          <a href="#categories">Categories</a>
+          <div class="dropdown-content">
+            <a href="electronics.html">Electronics</a>
+            <a href="#fashion">Fashion</a>
+            <a href="#home-garden">Home & Garden</a>
+            <a href="#sports">Sports</a>
+          </div>
+          </div>
+        <a href="add_items.html">Sell</a>
+        <a href="../about_us.html">About Us</a>
+        <a href="../ContactU.html">Contact</a>
+      </div>
+      <div class="icons">
+        <i class="fa fa-shopping-cart"></i>
+        <i class="fa fa-user-circle"></i>
+      </div>
+    </div>
+  </div>
 
     <video id="video-background" autoplay loop muted playsinline>
         <source src="Images/shopinnn.mp4" type="video/mp4">
@@ -371,7 +409,7 @@
     });
         } else {
             alert("User ID missing, redirecting to login.");
-           window.location.href = "Login.html";
+    
         }
         fetch('./Nav_Bar.html')
     .then(response => {

@@ -24,7 +24,6 @@
       </div>
     </div>
 
-   
     <div class="navbar-bottom">
       <div class="nav-links">
         <a href="home.html">Home</a>
@@ -36,7 +35,7 @@
             <a href="#home-garden">Home & Garden</a>
             <a href="#sports">Sports</a>
           </div>
-          </div>
+        </div>
         <a href="add_items.html">Sell</a>
         <a href="about_us.html">About Us</a>
         <a href="ContactU.html">Contact</a>
@@ -50,7 +49,7 @@
 
   <div class="payment-form">
     <h2>Select Payment Method</h2>
-    <form>
+    <form action="PaymentServlet" method="post">
         <label for="payment-method">Payment Method:</label>
         <select id="payment-method" name="payment-method">
             <option value="cash">Cash on delivery</option>
@@ -72,16 +71,16 @@
                 <option value="">Select Month</option>
                 <option value="01">January</option>
                 <option value="02">February</option>
-                <option value="02">March</option>
-                <option value="02">April</option>
-                <option value="02">May</option>
-                <option value="02">June</option>
-                <option value="02">July</option>
-                <option value="02">August</option>
-                <option value="02">September</option>
-                <option value="02">October</option>
-                <option value="02">November</option>
-                <option value="02">December</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
             </select>
 
             <label for="expiration-year">Expiration Year</label>
@@ -92,7 +91,6 @@
                 <option value="2028">2028</option>
                 <option value="2029">2029</option>
                 <option value="2030">2030</option>
-             
             </select>
 
             <label for="cvc">CVC</label>
@@ -100,16 +98,9 @@
 
             <label for="name-on-card">Name on Card</label>
             <input type="text" id="name-on-card" name="name-on-card" placeholder="John Perera">
-
-            <label for="billing-address">Billing Address</label>
-            <input type="text" id="billing-address" name="billing-address" placeholder="23A Princess Street">
-
-            <label for="zip">ZIP Code</label>
-            <input type="text" id="zip" name="zip" placeholder="12345">
         </div>
 
-        <div class="total-due">Total due:</div>
-
+  
         <button id="pay-button" type="submit" class="hidden">Pay</button>
     </form>
 </div>
@@ -118,15 +109,15 @@
     document.addEventListener('DOMContentLoaded', function() {
         const paymentMethod = document.getElementById('payment-method');
         const cardDetails = document.getElementById('card-details');
-        const payButton = document.getElementById('pay-button'); // Highlight: Added payButton reference
+        const payButton = document.getElementById('pay-button');
 
         paymentMethod.addEventListener('change', function() {
             if (paymentMethod.value === 'card') {
                 cardDetails.classList.remove('hidden');
-                payButton.classList.remove('hidden'); // Highlight: Show Pay button for Card
+                payButton.classList.remove('hidden');
             } else {
                 cardDetails.classList.add('hidden');
-                payButton.classList.add('hidden'); // Highlight: Hide Pay button for Cash
+                payButton.classList.add('hidden');
             }
         });
     });

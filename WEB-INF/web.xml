@@ -98,5 +98,13 @@
         <servlet-name>shippingservlet</servlet-name>
         <url-pattern>/shippingservlet</url-pattern>
     </servlet-mapping>
+<servlet>
+        <servlet-name>PaymentServlet</servlet-name>
+        <servlet-class>PaymentServlet</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>PaymentServlet</servlet-name>
+        <url-pattern>/PaymentServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

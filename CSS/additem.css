@@ -86,12 +86,12 @@ input, select, textarea, button {
 }
 
 button {
-    background-color: #28a745;
+    background-color: #e29393;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color:  #fda6a6;
 }

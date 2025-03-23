@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <link rel="stylesheet" href="Cheakout.css">
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+      
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            height: 370px;
+            position: relative;
+            top: 50px;
+        }
+
+        .message {
+            text-align: center;
+            padding: 30px;
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .message p {
+            margin-top: 10px;
+            font-size: 15px;
+
+        }
+
+        .next-step {
+            text-align: center;
+            margin-top: 30px;
+            
+        }
+
+        .next-step a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+        }
+
+        .next-step a:hover {
+            background-color: #45a049;
+        }
+
+        .footer-links {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer-links a {
+            color: #333;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .background-video-container {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Place video behind content */
+  }
+  
+  /* Background video styling */
+  .background-video {
+    object-fit: cover; /* Ensure the video covers the entire container */
+    width: 100%;
+    height: 100%;
+  }
+  .fnl{
+    position: relative;
+    height:40px;
+    width: 200px;
+    left: 190px;
+    top: -20px;
+  }
+    </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-top">
+      <div class="logo">Buy&Sell</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search products...">
+        <button>Search</button>
+      </div>
+      <div class="auth-buttons">
+        <button>Login</button>
+        <button>Signup</button>
+      </div>
+    </div>
+
+    <div class="navbar-bottom">
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <div class="dropdown">
+          <a href="#categories">Categories</a>
+          <div class="dropdown-content">
+            <a href="electronics.html">Electronics</a>
+            <a href="#fashion">Fashion</a>
+            <a href="#home-garden">Home & Garden</a>
+            <a href="#sports">Sports</a>
+          </div>
+        </div>
+        <a href="add_items.html">Sell</a>
+        <a href="about_us.html">About Us</a>
+        <a href="ContactU.html">Contact</a>
+      </div>
+      <div class="icons">
+        <i class="fa fa-shopping-cart"></i>
+        <i class="fa fa-user-circle"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="background-video-container">
+    <br><br><br><br><br><br><br><br>
+    <video autoplay muted loop class="background-video">
+      <source src="Images/bvid04.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <!-- After Shipping Confirmation -->
+   
+  <div class="container">
+      <div class="message">
+          <h3 style="position: relative;top: -30px; font-size:large;">Details Successfully Submitted!</h3>
+          <p>Thank you for providing your shipping details. Your information has been successfully received.</p>
+          <p>Proceed to complete your purchase or explore more products to buy.</p>
+      </div>
+
+      <button class="fnl" onclick="window.location.href='newcart.html'">Complete Your Purchase</button>
+
+      <div class="footer-links">
+          <a href="#">Refund policy</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms of service</a>
+          <a href="#">Contact information</a>
+      </div>
+  </div>
+
+</body>
+</html>
