@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="CSS/navbar.css">
   <link rel="stylesheet" href="CSS/home.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
 </head>
 <body>
@@ -121,26 +122,48 @@
 <div>
   
 
-<section class="offers">
-  <h2>Special Offers</h2>
-  <div class="offer-card">
-    <h3>Up to 50% Off on Electronics</h3>
-    <p>Hurry, limited time only!</p>
-  </div>
-  <div class="offer-card">
-    <h3>Buy 1 Get 1 Free on Fashion Items</h3>
-    <p>Don't miss out on this exclusive offer.</p>
-  </div>
-</section>
-
-</div>
-      </div>
+  <section class="offers">
+    <h2>Special Offers</h2>
+    <div class="offers-container">
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="img/elec1.jpg" alt="Electronics Offer">
+            </div>
+            <div class="offer-content">
+                <h3>Up to 50% Off on Electronics</h3>
+                <p>Hurry, limited time only!</p>
+                <div class="countdown">
+                    <span id="days">263</span>d : 
+                    <span id="hours">6</span>h : 
+                    <span id="minutes">38</span>m : 
+                    <span id="seconds">26</span>s
+                </div>
+            </div>
+        </div>
+        <div class="offer-card">
+            <div class="offer-image">
+                <img src="img/Fashion.jpg" alt="Fashion Offer">
+            </div>
+            <div class="offer-content">
+                <h3>Buy 1 Get 1 Free on Fashion Items</h3>
+                <p>Don't miss out on this exclusive offer.</p>
+            </div>
+        </div>
     </div>
-  </div>
+</section>
 
 
 <!-- Footer -->
-<footer><p>&copy; 2025 E-Commerce Store</p></footer>
+<footer>
+  <div class="footer-content">
+      <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2025 E-Commerce Store. All rights reserved.</p>
+  </div>
+</footer>
 
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -159,10 +182,26 @@
           
     },
   });
+
+  const countdown = () => {
+  const endDate = new Date("December 31, 2025 23:59:59").getTime();
+  const now = new Date().getTime();
+  const timeLeft = endDate - now;
+
+  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
+};
+
+setInterval(countdown, 1000);
 </script>
-
-
-  
+ 
 
 </body>
 </html>
