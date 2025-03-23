@@ -130,8 +130,8 @@
             position: absolute;
         top: 30px;
         left: 400px;
-        width: 600px;
-        height: 550px;
+        width: 650px;
+        height: 600px;
         
         z-index: -1;
     }
@@ -148,53 +148,104 @@
         
     }
 
-    .history-container {
+
+
+
+
+
+
+
+
+
+    .order-container {
             width: 90%;
-            max-width: 600px;
-            position: relative;
-            right: -400px;
-            top: 180px;
+            max-width: 610px;
             background: #fff;
             padding: 20px;
+            position: relative;
+            right: -400px;
+            top: 230px;
             
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+
+
+           
         }
 
         h2 {
             text-align: center;
-            color: #3f355b;
+            color: #333;
+            margin-bottom: 15px;
         }
 
-        .product-list {
+        .order-list {
             list-style: none;
             padding: 0;
         }
 
-        .product-item {
+        .order-item {
             background: #f9f9f9;
             padding: 15px;
             margin-bottom: 10px;
-            border-radius: 5px;
+            border-radius: 8px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-item:hover {
+            background: #e0e0e0;
+            transform: scale(1.02);
+        }
+
+        .order-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .order-details {
+            flex: 1;
+        }
+
+        .order-name {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .order-desc {
+            color: #666;
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+
+        .order-info {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            transition: 0.3s;
-        }
-
-        .product-item:hover {
-            background: #e0e0e0;
-        }
-
-        .product-name {
-            font-weight: bold;
-            color: #555;
-        }
-
-        .product-date {
-            color: #777;
             font-size: 0.9em;
+            color: #777;
         }
 
+        .order-rating {
+            color: gold;
+            font-size: 1em;
+        }
+
+
+
+
+
+
+   
+        
+        
+
+     
 
 
         .sell-container {
@@ -206,7 +257,7 @@
         max-width: 300px;
         position: relative;
         right: -500px;
-        top: -200px;
+        top: -400px;
         margin: auto;
     }
 
@@ -242,10 +293,11 @@
     <img id="main-image" src="Images/lim.jpeg" alt="My Image">
 
 
-    <div class="history-container">
-        <h2>Purchase History</h2>
-        <ul class="product-list" id="productList"></ul>
+    <div class="order-container">
+        <h2>Order History</h2>
+        <ul class="order-list" id="orderList"></ul>
     </div>
+
 
 
 
@@ -336,24 +388,68 @@
 
 
 
-    const purchaseHistory = [
-            { name: "Wireless Headphones", date: "March 10, 2025" },
-            { name: "Gaming Mouse", date: "March 5, 2025" },
-            { name: "Mechanical Keyboard", date: "February 28, 2025" },
-            { name: "Smartwatch", date: "February 20, 2025" }
+   
+    
+
+    const orderHistory = [
+            { 
+                name: "Bluetooth Speaker", 
+                desc: "Portable speaker with deep bass and 10-hour battery.",
+                date: "March 12, 2025", 
+                price: "Rs. 25,000", 
+                rating: "⭐⭐⭐⭐", 
+                image: "Images/speeker.jpeg"
+            },
+            { 
+                name: "Laptop Stand", 
+                desc: "Adjustable aluminum stand for better ergonomics.", 
+                date: "March 8, 2025", 
+                price: "Rs. 10,000", 
+                rating: "⭐⭐⭐⭐⭐", 
+                image: "Images/stand.jpg"
+            },
+            { 
+                name: "Smartphone ", 
+                desc: "Flexible tripod with remote shutter control.", 
+                date: "March 1, 2025", 
+                price: "Rs. 250,000", 
+                rating: "⭐⭐⭐⭐", 
+                image: "Images/Front1.png"
+            },
+            { 
+                name: "External Hard Drive", 
+                desc: "1TB SSD with high-speed USB-C connectivity.", 
+                date: "February 22, 2025", 
+                price: "RS. 159,000", 
+                rating: "⭐⭐⭐⭐⭐", 
+                image: "Images/images.jpeg"
+            }
         ];
 
-        function displayHistory() {
-            const list = document.getElementById("productList");
-            purchaseHistory.forEach(item => {
+        function displayOrders() {
+            const list = document.getElementById("orderList");
+            orderHistory.forEach(item => {
                 const li = document.createElement("li");
-                li.classList.add("product-item");
-                li.innerHTML = `<span class="product-name">${item.name}</span> <span class="product-date">${item.date}</span>`;
+                li.classList.add("order-item");
+                li.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" class="order-image">
+                    <div class="order-details">
+                        <div class="order-name">${item.name}</div>
+                        <div class="order-desc">${item.desc}</div>
+                        <div class="order-info">
+                            <span class="order-date">${item.date}</span>
+                            <span class="order-price">${item.price}</span>
+                            <span class="order-rating">${item.rating}</span>
+                        </div>
+                    </div>
+                `;
                 list.appendChild(li);
             });
         }
 
-        displayHistory();
+        displayOrders();
+
+
 
     </script>
     
