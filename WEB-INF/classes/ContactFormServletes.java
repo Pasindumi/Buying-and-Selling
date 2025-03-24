@@ -3,7 +3,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
 
-public class ContactFormServlet extends HttpServlet {
+public class ContactFormServletes extends HttpServlet {
 
          protected void doPost(HttpServletRequest request, HttpServletResponse response)
                            throws ServletException, IOException {
@@ -43,11 +43,11 @@ public class ContactFormServlet extends HttpServlet {
                            // Execute the query
                            int rowsAffected = stmt.executeUpdate();
 
-                          if (rowsAffected > 0) {
-    response.sendRedirect("home.html"); // Redirect to home page
-} else {
-    response.getWriter().write("Error in submitting message.");
-}
+                           if (rowsAffected > 0) {
+                            response.sendRedirect("home.html"); 
+                        } else {
+                            response.getWriter().write("Error in submitting message.");
+                        }
 
                   } catch (Exception e) {
                            e.printStackTrace();

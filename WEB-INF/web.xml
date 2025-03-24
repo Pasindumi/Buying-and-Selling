@@ -14,13 +14,13 @@
 
 
     <servlet>
-        <servlet-name>registerservlets</servlet-name>
-        <servlet-class>registerservlets</servlet-class>
+        <servlet-name>registerservletsses</servlet-name>
+        <servlet-class>registerservletsses</servlet-class>
     </servlet>
     
 
     <servlet-mapping>
-        <servlet-name>registerservlets</servlet-name>
+        <servlet-name>registerservletsses</servlet-name>
         <url-pattern>/registerservlets</url-pattern>
     </servlet-mapping>
 
@@ -106,5 +106,15 @@
     <servlet-mapping>
         <servlet-name>PaymentServlet</servlet-name>
         <url-pattern>/PaymentServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ContactFormServletes</servlet-name>
+        <servlet-class>ContactFormServletes</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ContactFormServletes</servlet-name>
+        <url-pattern>/ContactFormServlet</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+
 @WebServlet("/registerservlets")
-public class registerservlets extends HttpServlet {
+public class registerservletsses extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // Database credentials
@@ -54,8 +56,8 @@ public class registerservlets extends HttpServlet {
             int rowsInserted = pstmt.executeUpdate();
 
             if (rowsInserted > 0) {
-                
-                out.println("<a href='aftersign.html'></a>");
+                // Redirect to aftersign.html if registration is successful
+                response.sendRedirect("aftersign.html");
             } else {
                 out.println("<h3>Registration failed. Please try again.</h3>");
             }

@@ -4,10 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Successful</title>
-    <link rel="stylesheet" href="CSS/aftersign.css">
+    
     <link rel="stylesheet" href="CSS/navbar.css">
+
+<style>
+  /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+   
+  
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    animation: fadeIn 0.8s ease-in-out;
+    position:relative;
+    top: 120px;
+    left: 450px;
+    
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #254153;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+    animation: fadeInText 1.2s ease-out;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #1a3c2b;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(66, 230, 149, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: #356754;
+    box-shadow: 0 6px 12px rgba(66, 230, 149, 0.6);
+}
+
+.btn-secondary {
+    background-color: #256b6e;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(59, 178, 184, 0.4);
+}
+
+.btn-secondary:hover {
+    background-color: #256b6e;
+    box-shadow: 0 6px 12px rgba(59, 178, 184, 0.6);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+/* Background video container */
+.background-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Place video behind content */
+}
+
+/* Background video styling */
+.background-video {
+  object-fit: cover; /* Ensure the video covers the entire container */
+  width: 100%;
+  height: 100%;
+}
+
+
+</style>
+
 </head>
+
 <body>
+
+  <div class="background-video-container">
+    <video autoplay muted loop class="background-video">
+      <source src="Images/background.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
     <div class="navbar">
 
         <div class="navbar-top">
@@ -52,8 +218,8 @@
         <p>Thank you for joining us. Your account has been created successfully. Now you can log in to your account and enjoy all the features!</p>
 
         <div class="buttons">
-            <a href="login.html" class="btn btn-primary">Go to Login</a>
-            <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            <a href="Login.html" class="btn btn-primary">Go to Login</a>
+            <a href="home.html" class="btn btn-secondary">Back to Home</a>
         </div>
     </div>
 </div>
